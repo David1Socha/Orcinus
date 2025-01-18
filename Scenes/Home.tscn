@@ -1,0 +1,588 @@
+[gd_scene load_steps=48 format=2]
+
+[ext_resource path="res://Scenes/MenuButton.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Images/button_icons/play.PNG" type="Texture" id=2]
+[ext_resource path="res://Images/button_icons/quit.PNG" type="Texture" id=3]
+[ext_resource path="res://Fonts/TouchOfNature195.tres" type="DynamicFont" id=4]
+[ext_resource path="res://Scripts/Home.cs" type="Script" id=5]
+[ext_resource path="res://Images/button_icons/credits.PNG" type="Texture" id=6]
+[ext_resource path="res://Fonts/CreditsFont.tres" type="DynamicFont" id=7]
+[ext_resource path="res://Fonts/UbuntuBold65.tres" type="DynamicFont" id=8]
+[ext_resource path="res://Images/whale_tail.png" type="Texture" id=9]
+[ext_resource path="res://Images/sea_panda_logo/sea_panda_logo.png" type="Texture" id=10]
+[ext_resource path="res://Images/godot_icon_monochrome_light.png" type="Texture" id=11]
+[ext_resource path="res://Fonts/UbuntuBold85.tres" type="DynamicFont" id=12]
+[ext_resource path="res://Images/underwaterbackgrounds/background_4.PNG" type="Texture" id=15]
+[ext_resource path="res://Images/underwaterbackgrounds/background_2.PNG" type="Texture" id=16]
+[ext_resource path="res://Images/underwaterbackground_arctic/background_2.PNG" type="Texture" id=17]
+[ext_resource path="res://Images/underwaterbackgrounds/background_1.PNG" type="Texture" id=18]
+[ext_resource path="res://Images/underwaterbackground_arctic/background_1.PNG" type="Texture" id=19]
+[ext_resource path="res://Images/underwaterbackground_arctic/background_3.PNG" type="Texture" id=20]
+[ext_resource path="res://Images/underwaterbackground_arctic/background_4.PNG" type="Texture" id=21]
+[ext_resource path="res://Images/underwaterbackgrounds/background_3.PNG" type="Texture" id=22]
+[ext_resource path="res://Scripts/BiomeAwareBackground.cs" type="Script" id=23]
+[ext_resource path="res://Images/underwaterbackground_deepocean/background_1.PNG" type="Texture" id=24]
+[ext_resource path="res://Images/underwaterbackground_deepocean/background_3.PNG" type="Texture" id=25]
+[ext_resource path="res://Images/underwaterbackground_deepocean/background_4.PNG" type="Texture" id=26]
+[ext_resource path="res://Images/underwaterbackground_deepocean/background_2.PNG" type="Texture" id=27]
+[ext_resource path="res://Scenes/ProgressDisplay.tscn" type="PackedScene" id=28]
+[ext_resource path="res://Images/gameplay_icons/trophy_icon.PNG" type="Texture" id=29]
+
+[sub_resource type="Theme" id=14]
+
+[sub_resource type="StyleBoxFlat" id=15]
+bg_color = Color( 0.439216, 0.541176, 0.733333, 0.866667 )
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id=16]
+bg_color = Color( 0.439216, 0.541176, 0.733333, 0.866667 )
+corner_radius_top_left = 100
+corner_radius_top_right = 100
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 100
+expand_margin_left = 20.0
+expand_margin_right = 20.0
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.12549, 0.439216, 0.592157, 1 )
+corner_radius_top_left = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="StyleBoxFlat" id=5]
+content_margin_bottom = 50.0
+bg_color = Color( 0.537255, 0.54902, 0.54902, 1 )
+
+[sub_resource type="StyleBoxFlat" id=4]
+border_width_left = 50
+border_color = Color( 1, 1, 1, 0 )
+
+[sub_resource type="Theme" id=3]
+VScrollBar/styles/grabber = SubResource( 5 )
+VScrollBar/styles/scroll = SubResource( 4 )
+
+[sub_resource type="StyleBoxFlat" id=10]
+bg_color = Color( 0.247059, 0.27451, 0.360784, 0 )
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id=8]
+bg_color = Color( 0.247059, 0.27451, 0.360784, 1 )
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0.180392, 0.203922, 0.27451, 1 )
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id=9]
+bg_color = Color( 0.145098, 0.172549, 0.258824, 1 )
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="Theme" id=7]
+Button/styles/focus = SubResource( 10 )
+Button/styles/hover = SubResource( 8 )
+Button/styles/normal = SubResource( 6 )
+Button/styles/pressed = SubResource( 9 )
+
+[sub_resource type="Gradient" id=17]
+interpolation_mode = 1
+offsets = PoolRealArray( 0 )
+colors = PoolColorArray( 0.866667, 0.898039, 0.533333, 1 )
+
+[sub_resource type="GradientTexture" id=18]
+gradient = SubResource( 17 )
+
+[sub_resource type="Gradient" id=19]
+interpolation_mode = 1
+offsets = PoolRealArray( 0 )
+colors = PoolColorArray( 0.866667, 0.898039, 0.533333, 1 )
+
+[sub_resource type="GradientTexture" id=20]
+gradient = SubResource( 19 )
+
+[sub_resource type="Gradient" id=23]
+interpolation_mode = 1
+offsets = PoolRealArray( 0.0149254 )
+colors = PoolColorArray( 0.509804, 0.937255, 0.964706, 1 )
+
+[sub_resource type="GradientTexture" id=24]
+gradient = SubResource( 23 )
+
+[sub_resource type="Gradient" id=21]
+interpolation_mode = 1
+offsets = PoolRealArray( 0 )
+colors = PoolColorArray( 0.4, 0.435294, 0.439216, 1 )
+
+[sub_resource type="GradientTexture" id=22]
+gradient = SubResource( 21 )
+
+[node name="Home" type="Node2D"]
+script = ExtResource( 5 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+current = true
+process_mode = 0
+smoothing_enabled = true
+smoothing_speed = 0.001
+
+[node name="MainMenuLayer" type="CanvasLayer" parent="."]
+
+[node name="MainMenu" type="Control" parent="MainMenuLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="ButtonsBackground" type="Panel" parent="MainMenuLayer/MainMenu"]
+anchor_left = 0.35
+anchor_top = 0.4
+anchor_right = 0.65
+anchor_bottom = 0.95
+theme = SubResource( 14 )
+custom_styles/panel = SubResource( 15 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainMenuLayer/MainMenu/ButtonsBackground"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+alignment = 1
+
+[node name="PlayButton" parent="MainMenuLayer/MainMenu/ButtonsBackground/VBoxContainer" instance=ExtResource( 1 )]
+margin_right = 768.0
+focus_neighbour_top = NodePath("../QuitButton")
+size_flags_horizontal = 1
+ButtonIcon = ExtResource( 2 )
+ButtonText = "Play"
+
+[node name="CreditsButton" parent="MainMenuLayer/MainMenu/ButtonsBackground/VBoxContainer" instance=ExtResource( 1 )]
+margin_top = 204.0
+margin_right = 768.0
+margin_bottom = 404.0
+size_flags_horizontal = 1
+ButtonIcon = ExtResource( 6 )
+ButtonText = "Credits"
+
+[node name="ProgressButton" parent="MainMenuLayer/MainMenu/ButtonsBackground/VBoxContainer" instance=ExtResource( 1 )]
+margin_top = 408.0
+margin_right = 768.0
+margin_bottom = 608.0
+size_flags_horizontal = 1
+ButtonIcon = ExtResource( 29 )
+ButtonText = "Progress"
+
+[node name="QuitButton" parent="MainMenuLayer/MainMenu/ButtonsBackground/VBoxContainer" instance=ExtResource( 1 )]
+margin_top = 612.0
+margin_right = 768.0
+margin_bottom = 812.0
+focus_neighbour_bottom = NodePath("../PlayButton")
+size_flags_horizontal = 1
+ButtonIcon = ExtResource( 3 )
+ButtonText = "Quit"
+
+[node name="OrcinusTitle" type="Label" parent="MainMenuLayer/MainMenu"]
+anchor_left = 0.3
+anchor_top = 0.05
+anchor_right = 0.7
+anchor_bottom = 0.18
+rect_scale = Vector2( 1.05, 1.05 )
+custom_fonts/font = ExtResource( 4 )
+text = "OrcinUS"
+align = 1
+
+[node name="OrcinusTitle2" type="Label" parent="MainMenuLayer/MainMenu"]
+anchor_left = 0.35
+anchor_top = 0.2
+anchor_right = 0.65
+anchor_bottom = 0.2
+rect_scale = Vector2( 1.05, 1.05 )
+custom_fonts/font = ExtResource( 12 )
+text = "Pod Rescue"
+align = 1
+
+[node name="WhaleTail" type="TextureRect" parent="MainMenuLayer/MainMenu"]
+visible = false
+anchor_left = 0.73
+anchor_top = 0.05
+anchor_right = 0.85
+anchor_bottom = 0.26
+texture = ExtResource( 9 )
+expand = true
+stretch_mode = 5
+
+[node name="SeaPandaPanel" type="Panel" parent="MainMenuLayer/MainMenu"]
+anchor_left = 0.05
+anchor_top = 0.77
+anchor_right = 0.31
+anchor_bottom = 0.95
+mouse_default_cursor_shape = 2
+custom_styles/panel = SubResource( 16 )
+
+[node name="VBoxContainer" type="HBoxContainer" parent="MainMenuLayer/MainMenu/SeaPandaPanel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="TextureRect" type="TextureRect" parent="MainMenuLayer/MainMenu/SeaPandaPanel/VBoxContainer"]
+margin_right = 314.0
+margin_bottom = 259.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource( 10 )
+expand = true
+stretch_mode = 6
+
+[node name="Made With" type="Label" parent="MainMenuLayer/MainMenu/SeaPandaPanel/VBoxContainer"]
+margin_left = 318.0
+margin_top = 54.0
+margin_right = 665.0
+margin_bottom = 205.0
+size_flags_horizontal = 3
+size_flags_vertical = 6
+size_flags_stretch_ratio = 1.1
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = ExtResource( 8 )
+text = "Sea Panda
+Creative"
+align = 1
+
+[node name="GodotPanel" type="Panel" parent="MainMenuLayer/MainMenu"]
+anchor_left = 0.7
+anchor_top = 0.77
+anchor_right = 0.95
+anchor_bottom = 0.95
+mouse_default_cursor_shape = 2
+custom_styles/panel = SubResource( 16 )
+
+[node name="VBoxContainer" type="HBoxContainer" parent="MainMenuLayer/MainMenu/GodotPanel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/separation = 20
+
+[node name="Made With" type="Label" parent="MainMenuLayer/MainMenu/GodotPanel/VBoxContainer"]
+margin_top = 54.0
+margin_right = 335.0
+margin_bottom = 205.0
+size_flags_horizontal = 3
+size_flags_vertical = 6
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = ExtResource( 8 )
+text = "Made With
+Godot"
+align = 1
+
+[node name="TextureRect" type="TextureRect" parent="MainMenuLayer/MainMenu/GodotPanel/VBoxContainer"]
+margin_left = 355.0
+margin_right = 640.0
+margin_bottom = 259.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource( 11 )
+expand = true
+stretch_mode = 6
+
+[node name="ProgressDisplay" parent="MainMenuLayer/MainMenu" instance=ExtResource( 28 )]
+visible = false
+
+[node name="CreditsPopup" type="PopupPanel" parent="MainMenuLayer/MainMenu"]
+anchor_left = 0.3
+anchor_top = 0.2
+anchor_right = 0.8
+anchor_bottom = 0.8
+input_pass_on_modal_close_click = false
+custom_styles/panel = SubResource( 1 )
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MainMenuLayer/MainMenu/CreditsPopup"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = SubResource( 3 )
+scroll_horizontal_enabled = false
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainMenuLayer/MainMenu/CreditsPopup/ScrollContainer"]
+margin_right = 1280.0
+margin_bottom = 11754.0
+size_flags_horizontal = 3
+
+[node name="TopMargin" type="MarginContainer" parent="MainMenuLayer/MainMenu/CreditsPopup/ScrollContainer/VBoxContainer"]
+margin_right = 1230.0
+margin_bottom = 20.0
+mouse_filter = 1
+custom_constants/margin_top = 20
+custom_constants/margin_left = 5
+
+[node name="TextMargins" type="MarginContainer" parent="MainMenuLayer/MainMenu/CreditsPopup/ScrollContainer/VBoxContainer"]
+margin_top = 24.0
+margin_right = 1230.0
+margin_bottom = 10264.0
+mouse_filter = 1
+custom_constants/margin_right = 50
+custom_constants/margin_top = 50
+custom_constants/margin_left = 50
+custom_constants/margin_bottom = 50
+
+[node name="Credits" type="Label" parent="MainMenuLayer/MainMenu/CreditsPopup/ScrollContainer/VBoxContainer/TextMargins"]
+margin_left = 50.0
+margin_top = 50.0
+margin_right = 1180.0
+margin_bottom = 11562.0
+mouse_filter = 1
+size_flags_vertical = 1
+custom_fonts/font = ExtResource( 7 )
+text = "Art and Design: Adalia Socha
+
+Programming and Design: David Socha
+
+
+-------------------------------
+License Information
+-------------------------------
+
+This game uses Godot Engine, available under the following license:
+
+Copyright (c) 2007-2021 Juan Linietsky, Ariel Manzur. Copyright (c) 2014-2021 Godot Engine contributors.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \"Software\"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+---
+
+This game uses the Godot Engine Logo, which has the following license:
+
+Godot Engine Logo Copyright (c) 2017 Andrea Calabró
+
+This work is licensed under a Creative Commons Attribution 4.0 International License (CC-BY-4.0 International) https://creativecommons.org/licenses/by/4.0/.
+
+---
+
+This game uses the font Ubuntu, which has the following license:
+
+-------------------------------
+UBUNTU FONT LICENCE Version 1.0
+-------------------------------
+
+PREAMBLE
+This licence allows the licensed fonts to be used, studied, modified and
+redistributed freely. The fonts, including any derivative works, can be
+bundled, embedded, and redistributed provided the terms of this licence
+are met. The fonts and derivatives, however, cannot be released under
+any other licence. The requirement for fonts to remain under this
+licence does not require any document created using the fonts or their
+derivatives to be published under this licence, as long as the primary
+purpose of the document is not to be a vehicle for the distribution of
+the fonts.
+
+DEFINITIONS
+\"Font Software\" refers to the set of files released by the Copyright
+Holder(s) under this licence and clearly marked as such. This may
+include source files, build scripts and documentation.
+
+\"Original Version\" refers to the collection of Font Software components
+as received under this licence.
+
+\"Modified Version\" refers to any derivative made by adding to, deleting,
+or substituting -- in part or in whole -- any of the components of the
+Original Version, by changing formats or by porting the Font Software to
+a new environment.
+
+\"Copyright Holder(s)\" refers to all individuals and companies who have a
+copyright ownership of the Font Software.
+
+\"Substantially Changed\" refers to Modified Versions which can be easily
+identified as dissimilar to the Font Software by users of the Font
+Software comparing the Original Version with the Modified Version.
+
+To \"Propagate\" a work means to do anything with it that, without
+permission, would make you directly or secondarily liable for
+infringement under applicable copyright law, except executing it on a
+computer or modifying a private copy. Propagation includes copying,
+distribution (with or without modification and with or without charging
+a redistribution fee), making available to the public, and in some
+countries other activities as well.
+
+PERMISSION & CONDITIONS
+This licence does not grant any rights under trademark law and all such
+rights are reserved.
+
+Permission is hereby granted, free of charge, to any person obtaining a
+copy of the Font Software, to propagate the Font Software, subject to
+the below conditions:
+
+1) Each copy of the Font Software must contain the above copyright
+notice and this licence. These can be included either as stand-alone
+text files, human-readable headers or in the appropriate machine-
+readable metadata fields within text or binary files as long as those
+fields can be easily viewed by the user.
+
+2) The font name complies with the following:
+(a) The Original Version must retain its name, unmodified.
+(b) Modified Versions which are Substantially Changed must be renamed to
+avoid use of the name of the Original Version or similar names entirely.
+(c) Modified Versions which are not Substantially Changed must be
+renamed to both (i) retain the name of the Original Version and (ii) add
+additional naming elements to distinguish the Modified Version from the
+Original Version. The name of such Modified Versions must be the name of
+the Original Version, with \"derivative X\" where X represents the name of
+the new work, appended to that name.
+
+3) The name(s) of the Copyright Holder(s) and any contributor to the
+Font Software shall not be used to promote, endorse or advertise any
+Modified Version, except (i) as required by this licence, (ii) to
+acknowledge the contribution(s) of the Copyright Holder(s) or (iii) with
+their explicit written permission.
+
+4) The Font Software, modified or unmodified, in part or in whole, must
+be distributed entirely under this licence, and must not be distributed
+under any other licence. The requirement for fonts to remain under this
+licence does not affect any document created using the Font Software,
+except any version of the Font Software extracted from a document
+created using the Font Software may only be distributed under this
+licence.
+
+TERMINATION
+This licence becomes null and void if any of the above conditions are
+not met.
+
+DISCLAIMER
+THE FONT SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO ANY WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT OF
+COPYRIGHT, PATENT, TRADEMARK, OR OTHER RIGHT. IN NO EVENT SHALL THE
+COPYRIGHT HOLDER BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+INCLUDING ANY GENERAL, SPECIAL, INDIRECT, INCIDENTAL, OR CONSEQUENTIAL
+DAMAGES, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF THE USE OR INABILITY TO USE THE FONT SOFTWARE OR FROM OTHER
+DEALINGS IN THE FONT SOFTWARE.
+
+---
+
+Touch of Nature
+Freeware from Unauthorized Type
+
+This initial version includes capital letters with fish in them, capital letters without them in the lowercase slots, numbers with fish, and a few more.
+
+While walking the stairs at LA Tech University, where I am a student, I saw an ad with letters that I really liked.  It was an ad for a new Pet Shop in Town called Touch of Nature.  The thing I really liked was that \"Nature\" was written in rough-looking letters with fish in them.  I decided that I would try to recreate this in a font, and Touch of Nature is the result.  
+
+You use this font in any way that you see fit.  If you distribute it, I would like for this text file to accompany it.  (That's just so they know who made it.)  You may distribute it on CD, disk, or any other medium, but you may not sell it.
+
+Unauthorized Type features the creations of:
+Ben McGehee
+bmcgehee@engr.latech.edu
+
+http://www.latech.edu/~bmcgehee/untype/index.htm
+Check back to see when I make new fonts!
+
+---"
+autowrap = true
+
+[node name="CloseCreditsButton2" type="Button" parent="MainMenuLayer/MainMenu/CreditsPopup/ScrollContainer/VBoxContainer"]
+margin_left = 215.0
+margin_top = 10268.0
+margin_right = 1015.0
+margin_bottom = 10358.0
+rect_min_size = Vector2( 800, 90 )
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme = SubResource( 7 )
+custom_fonts/font = ExtResource( 7 )
+text = "Close"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BottomMargin" type="MarginContainer" parent="MainMenuLayer/MainMenu/CreditsPopup/ScrollContainer/VBoxContainer"]
+margin_top = 10362.0
+margin_right = 1230.0
+margin_bottom = 10382.0
+mouse_filter = 1
+custom_constants/margin_top = 20
+custom_constants/margin_left = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="BackgroundLayer1" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.1, 0.1 )
+motion_mirroring = Vector2( 5120, 0 )
+
+[node name="Background1" type="Sprite" parent="ParallaxBackground/BackgroundLayer1"]
+texture = ExtResource( 18 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 0, 0, 5120, 1440 )
+script = ExtResource( 23 )
+BiomeTextures = [ ExtResource( 18 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 24 ) ]
+
+[node name="BackgroundLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.2, 0.2 )
+motion_mirroring = Vector2( 5120, 0 )
+
+[node name="Background2" type="Sprite" parent="ParallaxBackground/BackgroundLayer2"]
+texture = ExtResource( 16 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 0, 0, 5120, 1440 )
+script = ExtResource( 23 )
+BiomeTextures = [ ExtResource( 16 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 27 ) ]
+
+[node name="BackgroundLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.3, 0.3 )
+motion_mirroring = Vector2( 5120, 0 )
+
+[node name="Background3" type="Sprite" parent="ParallaxBackground/BackgroundLayer3"]
+texture = ExtResource( 22 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 0, 0, 5120, 1440 )
+script = ExtResource( 23 )
+BiomeTextures = [ ExtResource( 22 ), ExtResource( 22 ), ExtResource( 20 ), ExtResource( 25 ) ]
+
+[node name="BackgroundLayer4" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.4, 0.4 )
+motion_mirroring = Vector2( 5120, 0 )
+
+[node name="Background4" type="Sprite" parent="ParallaxBackground/BackgroundLayer4"]
+self_modulate = Color( 0.87451, 1, 0.964706, 1 )
+texture = ExtResource( 15 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 0, 0, 5120, 1440 )
+script = ExtResource( 23 )
+BiomeTextures = [ ExtResource( 15 ), ExtResource( 15 ), ExtResource( 21 ), ExtResource( 26 ) ]
+
+[node name="HeightOverflowBg" type="Sprite" parent="ParallaxBackground"]
+position = Vector2( 0, 1440 )
+texture = SubResource( 18 )
+centered = false
+offset = Vector2( 0, -2 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 5120, 2880 )
+script = ExtResource( 23 )
+BiomeTextures = [ SubResource( 20 ), SubResource( 20 ), SubResource( 24 ), SubResource( 22 ) ]
+
+[connection signal="pressed" from="MainMenuLayer/MainMenu/ButtonsBackground/VBoxContainer/PlayButton" to="." method="PlayLevel"]
+[connection signal="pressed" from="MainMenuLayer/MainMenu/ButtonsBackground/VBoxContainer/CreditsButton" to="." method="ShowCredits"]
+[connection signal="pressed" from="MainMenuLayer/MainMenu/ButtonsBackground/VBoxContainer/ProgressButton" to="." method="ShowProgress"]
+[connection signal="pressed" from="MainMenuLayer/MainMenu/ButtonsBackground/VBoxContainer/QuitButton" to="." method="QuitGame"]
+[connection signal="gui_input" from="MainMenuLayer/MainMenu/SeaPandaPanel" to="." method="OnSeaPandaGuiInput"]
+[connection signal="gui_input" from="MainMenuLayer/MainMenu/GodotPanel" to="." method="OnGodotGuiInput"]
+[connection signal="ProgressDisplayClosed" from="MainMenuLayer/MainMenu/ProgressDisplay" to="." method="OnProgressDisplayClosed"]
+[connection signal="popup_hide" from="MainMenuLayer/MainMenu/CreditsPopup" to="." method="OnCreditsClosed"]
+[connection signal="pressed" from="MainMenuLayer/MainMenu/CreditsPopup/ScrollContainer/VBoxContainer/CloseCreditsButton2" to="." method="CloseCredits"]

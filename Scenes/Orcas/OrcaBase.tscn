@@ -1,0 +1,422 @@
+[gd_scene load_steps=24 format=2]
+
+[ext_resource path="res://Images/powerup_circle.png" type="Texture" id=1]
+[ext_resource path="res://Images/speed_boost.png" type="Texture" id=2]
+[ext_resource path="res://Sounds/obstacle_destroyed.ogg" type="AudioStream" id=3]
+[ext_resource path="res://Scripts/Orcas/OrcaMouthCollision.cs" type="Script" id=4]
+[ext_resource path="res://Scripts/Orcas/Orca.cs" type="Script" id=5]
+[ext_resource path="res://Images/airbubble/airbubble_cave.PNG" type="Texture" id=6]
+[ext_resource path="res://Scripts/Core/Trail2D.cs" type="Script" id=7]
+[ext_resource path="res://Shaders/BubbleParticles.tres" type="Material" id=8]
+[ext_resource path="res://Sounds/fish_boost_started.ogg" type="AudioStream" id=9]
+[ext_resource path="res://Scenes/Hats/Hat.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Shaders/MaxAlphaShader.gdshader" type="Shader" id=13]
+[ext_resource path="res://Scripts/CollectibleObjects/OrcaBubbleEmitter.cs" type="Script" id=14]
+[ext_resource path="res://Images/airbubble/airbubble_coral.PNG" type="Texture" id=15]
+[ext_resource path="res://Images/airbubble/airbubble_arctic.PNG" type="Texture" id=16]
+
+[sub_resource type="ParticlesMaterial" id=6]
+flag_disable_z = true
+direction = Vector3( -1, 0, 0 )
+gravity = Vector3( -100, 0, 0 )
+initial_velocity = 584.42
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+angle = 215.1
+angle_random = 1.0
+scale = 0.07
+scale_random = 0.04
+
+[sub_resource type="ShaderMaterial" id=1]
+shader = ExtResource( 13 )
+shader_param/max_alpha = 1.0
+
+[sub_resource type="Curve" id=10]
+max_value = 20.0
+_data = [ Vector2( 0, 2.39264 ), 0.0, 0.0, 0, 0, Vector2( 0.526442, 10.9816 ), 0.0, 0.0, 0, 0, Vector2( 0.930289, 9.2638 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CapsuleShape2D" id=9]
+radius = 249.13
+height = 326.174
+
+[sub_resource type="CapsuleShape2D" id=4]
+radius = 30.7787
+height = 38.0924
+
+[sub_resource type="Animation" id=5]
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("OrcaSprites:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.403922 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("TrailEmissionPoint/BoostTrail:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.403922 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Finlet1/Finlet1Front:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.266667 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Finlet2/Finlet2Front:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.254902 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Hat:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.258824 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=11]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("TrailEmissionPoint:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("TrailEmissionPoint/BoostTrail:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Finlet1/Finlet1Front:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Finlet2/Finlet2Front:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Hat:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=7]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("ActivePowerup/ActivePowerupNode/ActivePowerupSprite:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("ActivePowerup:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("SpeedBoost:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=8]
+resource_name = "powerup_active"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("ActivePowerup/ActivePowerupNode/ActivePowerupSprite:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.784314 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("ActivePowerup:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.9, 0.9 ), Vector2( 1.3, 1.3 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("SpeedBoost:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 2, 0.5, 2 ),
+"update": 0,
+"values": [ Vector2( 0.95, 1 ), Vector2( 1.1, 1.05 ), Vector2( 0.95, 1 ) ]
+}
+
+[node name="Orca" type="KinematicBody2D"]
+collision_layer = 17
+collision_mask = 17
+script = ExtResource( 5 )
+HorizontalSpeed = 770.0
+VerticalAccelerationOnPress = 55.0
+MaxVerticalSpeed = 800.0
+MaxRotationRadians = 0.38
+RotationSpeedRadians = 0.04
+UnitsPerMeter = 800
+StartingHealth = 3
+InvulnerabilityTimeAfterDamaged = 2.0
+FishStreakMaxTimeDelay = 2.5
+FishBoostThreshold = 6
+FishBoostDuration = 2.5
+FishBoostXSpeedIncrease = 250.0
+FishBoostGracePeriod = 0.3
+BasePrizePitch = 0.9
+BoostTrailMinSegments = 4
+BoostTrailMaxSegments = 32
+DialogueColor = Color( 1, 1, 1, 1 )
+
+[node name="TransformInheritanceBlocker" type="Node" parent="."]
+
+[node name="OrcaPositionReceiver" type="Node2D" parent="TransformInheritanceBlocker"]
+position = Vector2( 175.852, -32.1031 )
+
+[node name="OrcaBubbleEmitter" type="Particles2D" parent="TransformInheritanceBlocker/OrcaPositionReceiver"]
+amount = 5
+lifetime = 2.0
+explosiveness = 0.65
+randomness = 0.1
+local_coords = false
+process_material = ExtResource( 8 )
+texture = ExtResource( 15 )
+script = ExtResource( 14 )
+BubbleTextures = [ ExtResource( 15 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 6 ) ]
+
+[node name="OrcaTrailEmitter" type="Particles2D" parent="TransformInheritanceBlocker/OrcaPositionReceiver"]
+visible = false
+position = Vector2( -281.42, 0 )
+z_index = -1
+emitting = false
+amount = 5
+lifetime = 1.4
+explosiveness = 0.49
+local_coords = false
+process_material = SubResource( 6 )
+
+[node name="OrcaSprites" type="ViewportContainer" parent="."]
+material = SubResource( 1 )
+margin_left = -600.337
+margin_top = -609.245
+margin_right = 3164.66
+margin_bottom = 2049.75
+mouse_filter = 2
+
+[node name="Viewport" type="Viewport" parent="OrcaSprites"]
+size = Vector2( 2560, 1440 )
+transparent_bg = true
+handle_input_locally = false
+hdr = false
+usage = 0
+render_target_update_mode = 3
+
+[node name="OrcaMouthAnimation" type="AnimatedSprite" parent="OrcaSprites/Viewport"]
+use_parent_material = true
+position = Vector2( 565, 609 )
+flip_h = true
+
+[node name="OrcaAnimation" type="AnimatedSprite" parent="OrcaSprites/Viewport"]
+use_parent_material = true
+position = Vector2( 565, 609 )
+playing = true
+flip_h = true
+
+[node name="SpeedBoost" type="Node2D" parent="."]
+visible = false
+
+[node name="SpeedBoostSprite" type="Sprite" parent="SpeedBoost"]
+texture = ExtResource( 2 )
+flip_h = true
+
+[node name="TrailEmissionPoint" type="Node2D" parent="."]
+z_index = -2
+
+[node name="BoostTrail" type="Line2D" parent="TrailEmissionPoint"]
+width = 1.9
+width_curve = SubResource( 10 )
+default_color = Color( 1, 1, 1, 0.545098 )
+end_cap_mode = 2
+script = ExtResource( 7 )
+trailLength = 30
+
+[node name="ActivePowerup" type="Node2D" parent="."]
+
+[node name="ActivePowerupNode" type="Node2D" parent="ActivePowerup"]
+modulate = Color( 1, 1, 1, 0.745098 )
+
+[node name="ActivePowerupSprite" type="Sprite" parent="ActivePowerup/ActivePowerupNode"]
+visible = false
+position = Vector2( -52.3815, -0.74826 )
+scale = Vector2( 1.1, 1.1 )
+texture = ExtResource( 1 )
+
+[node name="PowerupEffectArea" type="Area2D" parent="ActivePowerup/ActivePowerupNode"]
+visible = false
+collision_layer = 17
+collision_mask = 17
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ActivePowerup/ActivePowerupNode/PowerupEffectArea"]
+rotation = 1.5708
+shape = SubResource( 9 )
+
+[node name="OrcaBodyCollision" type="CollisionPolygon2D" parent="."]
+visible = false
+polygon = PoolVector2Array( 211.27, 11.8844, 195.216, -13.8818, 171.233, -36.2785, 110.385, -67.1979, 38.2957, -81.7123, -36.7043, -80.7123, -139.886, -43.0078, -121.248, 19.4639, -48.0377, 16.621, 27.9623, 25.9543, 124.296, 47.2877, 149.002, 45.9674, 181.058, 44.5532, 204.156, 37.4822 )
+
+[node name="OrcaMouthCollision" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource( 4 )
+
+[node name="OrcaMouthCollisionShape" type="CollisionShape2D" parent="OrcaMouthCollision"]
+visible = false
+position = Vector2( 152.87, 9.23938 )
+rotation = 1.8326
+shape = SubResource( 4 )
+
+[node name="OrcaBubblesRemoteTransform" type="RemoteTransform2D" parent="."]
+position = Vector2( 175.852, -32.1031 )
+remote_path = NodePath("../TransformInheritanceBlocker/OrcaPositionReceiver")
+update_rotation = false
+update_scale = false
+
+[node name="Finlet1" type="Node2D" parent="."]
+position = Vector2( 12.0541, 3.62371 )
+
+[node name="Finlet1Front" type="Sprite" parent="Finlet1"]
+position = Vector2( -2.5918, -94.6606 )
+scale = Vector2( 0.2, 0.2 )
+flip_h = true
+
+[node name="Finlet2" type="Node2D" parent="."]
+position = Vector2( 12.0541, 0.623713 )
+
+[node name="Finlet2Front" type="Sprite" parent="Finlet2"]
+position = Vector2( -7.2583, -108.327 )
+scale = Vector2( 0.2, 0.2 )
+flip_h = true
+
+[node name="EffectsPlayer" type="AnimationPlayer" parent="."]
+method_call_mode = 1
+anims/Damaged = SubResource( 5 )
+anims/RESET = SubResource( 11 )
+
+[node name="PowerupAnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "powerup_active"
+anims/RESET = SubResource( 7 )
+anims/powerup_active = SubResource( 8 )
+
+[node name="ObstaclesDestroyedAudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+bus = "Sound"
+
+[node name="FishBoostAudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 9 )
+bus = "Sound"
+
+[node name="DialogueSource" type="Node2D" parent="."]
+
+[node name="Hat" parent="." instance=ExtResource( 10 )]

@@ -1,0 +1,48 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Scripts/CollectibleObjects/CollectiblePowerup.cs" type="Script" id=1]
+[ext_resource path="res://Scenes/CollectibleObjects/Base/CollectibleObject.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Images/powerups/powerup_bubble.PNG" type="Texture" id=3]
+[ext_resource path="res://Images/gameplay_icons/powerup_icon.PNG" type="Texture" id=4]
+[ext_resource path="res://Sounds/powerup_collected.ogg" type="AudioStream" id=6]
+
+[sub_resource type="CircleShape2D" id=6]
+radius = 57.6166
+
+[node name="CollectiblePowerup" instance=ExtResource( 2 )]
+z_index = -1
+script = ExtResource( 1 )
+Type = 0
+Duration = 0.0
+ModulateColor = Color( 0, 0, 0, 0 )
+PowerupIcon = null
+PowerupScale = 1.0
+
+[node name="BackgroundAura" parent="." index="0"]
+visible = false
+position = Vector2( 5.27896, 3.46231 )
+scale = Vector2( 14, 14.6297 )
+
+[node name="CollectibleObjectSprite" parent="." index="1"]
+scale = Vector2( 0.4, 0.4 )
+
+[node name="PowerupBubble" type="Sprite" parent="." index="2"]
+self_modulate = Color( 1, 1, 1, 0.776471 )
+scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 3 )
+
+[node name="CollectibleObjectCollision" parent="." index="3"]
+visible = false
+position = Vector2( 2.09988, -5.87964 )
+shape = SubResource( 6 )
+
+[node name="ProximityCollider" parent="." index="4"]
+visible = false
+monitoring = false
+monitorable = false
+
+[node name="OnCollectedAudio" parent="." index="5"]
+stream = ExtResource( 6 )
+
+[node name="OnCollectedParticles" parent="." index="8"]
+texture = ExtResource( 4 )

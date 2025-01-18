@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/Core/ProgressBar.cs" type="Script" id=1]
+
+[node name="ProgressBar" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -1774.0
+margin_bottom = -1290.0
+script = ExtResource( 1 )
+BackgroundColor = Color( 0.247059, 0.247059, 0.247059, 0.701961 )
+ProgressColor = Color( 0.952941, 0.356863, 0.356863, 1 )
+Progress = 0.398
+
+[node name="BackgroundRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.247059, 0.247059, 0.247059, 0.701961 )
+
+[node name="ProgressRect" type="ColorRect" parent="."]
+anchor_right = 0.398
+anchor_bottom = 1.0
+color = Color( 0.952941, 0.356863, 0.356863, 1 )

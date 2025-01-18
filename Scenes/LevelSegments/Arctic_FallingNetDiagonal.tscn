@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Scenes/CollectibleObjects/Fish2.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/CollectibleObjects/Net.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/LevelSegments/BaseLevelSegment.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/CollectibleObjects/Mine.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/CollectibleObjects/Fish3.tscn" type="PackedScene" id=6]
+
+[node name="Arctic_FallingNetDiagonal" instance=ExtResource( 3 )]
+
+[node name="SegmentEnd" parent="." index="0"]
+position = Vector2( 1653.33, 0 )
+
+[node name="Mine" parent="." index="1" instance=ExtResource( 5 )]
+position = Vector2( 386.441, 1031.27 )
+
+[node name="Net2" parent="." index="2" instance=ExtResource( 2 )]
+position = Vector2( 1125.67, 720.917 )
+rotation = 3.83972
+
+[node name="Net3" parent="." index="3" instance=ExtResource( 2 )]
+position = Vector2( 443.461, 160.864 )
+rotation = 3.83972
+
+[node name="Net4" parent="." index="4" instance=ExtResource( 2 )]
+position = Vector2( 784.755, 440.901 )
+rotation = 3.83972
+
+[node name="Fish3" parent="." index="5" instance=ExtResource( 6 )]
+position = Vector2( 381.73, 340.451 )
+
+[node name="Mine2" parent="." index="6" instance=ExtResource( 5 )]
+position = Vector2( 331.799, 1265.28 )
+
+[node name="Fish4" parent="." index="7" instance=ExtResource( 6 )]
+position = Vector2( 1126.55, 914.138 )
+
+[node name="Fish5" parent="." index="8" instance=ExtResource( 1 )]
+position = Vector2( 723.514, 620.295 )

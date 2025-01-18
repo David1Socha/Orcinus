@@ -1,0 +1,149 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Scenes/CollectibleObjects/Base/CollectiblePrize.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Images/yacht/yacht.png" type="Texture" id=2]
+[ext_resource path="res://Images/gameplay_icons/heart_icon.PNG" type="Texture" id=3]
+[ext_resource path="res://Scripts/CollectibleObjects/CollectibleYachtPrize.cs" type="Script" id=5]
+[ext_resource path="res://Images/yacht/spinners.png" type="Texture" id=7]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 41.5
+height = 5.00012
+
+[sub_resource type="Animation" id=3]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("CollectibleObjectSprite:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("YachtBody:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("YachtBody:rotation_degrees")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "sink_yacht"
+tracks/0/type = "value"
+tracks/0/path = NodePath("YachtBody:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, 10 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("YachtBody:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0, 7.0 ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "spinning_active"
+length = 0.7
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("CollectibleObjectSprite:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 360.0 ]
+}
+
+[node name="Yacht" instance=ExtResource( 1 )]
+scale = Vector2( 0.7, 0.7 )
+script = ExtResource( 5 )
+DirectionVector = Vector2( 1, 0 )
+PositionVariance = Vector2( 0, 0 )
+DeleteOnCollection = false
+FishValue = 0
+OnCollectedStatType = 33
+Velocity = 150.0
+
+[node name="BackgroundAura" parent="." index="0"]
+position = Vector2( -971.762, 56.2029 )
+scale = Vector2( 10.607, 7.66728 )
+
+[node name="CollectibleObjectSprite" parent="." index="1"]
+position = Vector2( -957.759, 45.7144 )
+texture = ExtResource( 7 )
+offset = Vector2( 818, -757 )
+
+[node name="CollectibleObjectCollision" parent="." index="2"]
+position = Vector2( -974.762, 45.2028 )
+shape = SubResource( 1 )
+
+[node name="ProximityCollider" parent="." index="3"]
+position = Vector2( -986.762, 51.2028 )
+
+[node name="ProximityCollisionShape" parent="ProximityCollider" index="0"]
+position = Vector2( -90, -18.0001 )
+
+[node name="OnCollectedAudio" parent="." index="4"]
+stream = null
+
+[node name="CollectibleObjectAnimation" parent="." index="5"]
+scale = Vector2( 0.9, 0.9 )
+playing = true
+
+[node name="OnCollectedParticles" parent="." index="7"]
+modulate = Color( 0.843137, 0.0431373, 0.0431373, 1 )
+position = Vector2( -979.902, 55.8571 )
+texture = ExtResource( 3 )
+
+[node name="DialogueSource" parent="." index="8"]
+position = Vector2( -132.733, -226.644 )
+
+[node name="YachtBody" type="Sprite" parent="." index="9"]
+z_index = -1
+texture = ExtResource( 2 )
+offset = Vector2( -115.714, -727.143 )
+
+[node name="YachtAnimator" type="AnimationPlayer" parent="." index="10"]
+autoplay = "spinning_active"
+anims/RESET = SubResource( 3 )
+anims/sink_yacht = SubResource( 5 )
+anims/spinning_active = SubResource( 4 )

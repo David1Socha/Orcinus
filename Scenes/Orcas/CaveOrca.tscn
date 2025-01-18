@@ -1,0 +1,93 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://Scenes/Orcas/OrcaBase.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Images/orcas/baby/tail_down.PNG" type="Texture" id=2]
+[ext_resource path="res://Images/orcas/baby/tail_neutral.PNG" type="Texture" id=3]
+[ext_resource path="res://Images/orcas/baby/mouth_open.PNG" type="Texture" id=4]
+[ext_resource path="res://Images/orcas/baby/finlet_1.PNG" type="Texture" id=5]
+[ext_resource path="res://Images/orcas/baby/finlet_2.PNG" type="Texture" id=6]
+[ext_resource path="res://Images/orcas/baby/tail_up.PNG" type="Texture" id=7]
+[ext_resource path="res://Images/orcas/baby/mouth_closed.PNG" type="Texture" id=8]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 8 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "default",
+"speed": 3.0
+} ]
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 7 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "default",
+"speed": 8.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=3]
+radius = 236.455
+height = 305.216
+
+[node name="Orca" instance=ExtResource( 1 )]
+VerticalAccelerationOnPress = 50.0
+MaxRotationRadians = 0.36
+FishBoostDuration = 2.0
+FishBoostGracePeriod = 0.25
+BasePrizePitch = 1.01
+OrcaEnum = 3
+DialogueColor = Color( 0.294118, 0.545098, 1, 1 )
+
+[node name="OrcaMouthAnimation" parent="OrcaSprites/Viewport" index="0"]
+frames = SubResource( 1 )
+
+[node name="OrcaAnimation" parent="OrcaSprites/Viewport" index="1"]
+frames = SubResource( 2 )
+frame = 3
+
+[node name="SpeedBoostSprite" parent="SpeedBoost" index="0"]
+position = Vector2( 190.033, 23.9115 )
+scale = Vector2( 0.9, 0.9 )
+
+[node name="TrailEmissionPoint" parent="." index="3"]
+position = Vector2( -14.7764, 18.5526 )
+
+[node name="ActivePowerupSprite" parent="ActivePowerup/ActivePowerupNode" index="0"]
+position = Vector2( -6.45057, 5.58493 )
+scale = Vector2( 2.24695, 1.38553 )
+
+[node name="PowerupEffectArea" parent="ActivePowerup/ActivePowerupNode" index="1"]
+visible = true
+
+[node name="CollisionShape2D" parent="ActivePowerup/ActivePowerupNode/PowerupEffectArea" index="0"]
+shape = SubResource( 3 )
+
+[node name="OrcaBodyCollision" parent="." index="5"]
+polygon = PoolVector2Array( 121.275, -38.6996, 43.5804, -43.8528, -26.1864, -10.555, -62.259, 12.4363, -48.3849, 52.8694, 26.5351, 52.8694, 78.8602, 45.3377, 164.087, 38.5989, 172.411, -22.0507 )
+
+[node name="OrcaMouthCollisionShape" parent="OrcaMouthCollision" index="0"]
+position = Vector2( 172.824, 12.4603 )
+
+[node name="Finlet1" parent="." index="8"]
+position = Vector2( -35.339, 3.26663 )
+
+[node name="Finlet1Front" parent="Finlet1" index="0"]
+position = Vector2( 0, 0 )
+scale = Vector2( 1, 1 )
+texture = ExtResource( 5 )
+
+[node name="Finlet2" parent="." index="9"]
+position = Vector2( -35.339, 4.4545 )
+
+[node name="Finlet2Front" parent="Finlet2" index="0"]
+position = Vector2( 0, 0 )
+scale = Vector2( 1, 1 )
+texture = ExtResource( 6 )
+
+[node name="DialogueSource" parent="." index="14"]
+position = Vector2( 204.313, 32.0724 )
+
+[node name="Hat" parent="." index="15"]
+position = Vector2( 149, -34 )
+rotation = 0.174533
+scale = Vector2( 0.85, 0.85 )

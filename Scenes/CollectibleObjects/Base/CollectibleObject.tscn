@@ -1,0 +1,91 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Scripts/ProximityDetectors/ProximityDetector.cs" type="Script" id=1]
+[ext_resource path="res://Scripts/CollectibleObjects/CollectibleObject.cs" type="Script" id=2]
+[ext_resource path="res://Images/airbubble/airbubble_coral.PNG" type="Texture" id=3]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 215.834
+height = 37.5196
+
+[sub_resource type="Gradient" id=4]
+offsets = PoolRealArray( 0, 0.984, 1 )
+colors = PoolColorArray( 0.992157, 0.992157, 0.815686, 0.788235, 1, 0.978953, 0.818444, 0.421757, 1, 1, 0.85098, 0.25098 )
+
+[sub_resource type="GradientTexture" id=3]
+gradient = SubResource( 4 )
+
+[sub_resource type="ParticlesMaterial" id=5]
+lifetime_randomness = 0.19
+emission_shape = 1
+emission_sphere_radius = 26.76
+flag_disable_z = true
+direction = Vector3( 0, 0, 0 )
+spread = 180.0
+gravity = Vector3( 200, 0, 0 )
+initial_velocity = 60.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+linear_accel = 18.18
+radial_accel = 500.0
+radial_accel_random = 0.21
+tangential_accel = 11.68
+tangential_accel_random = 0.22
+angle = 720.0
+angle_random = 1.0
+scale = 0.12
+scale_random = 0.05
+color_ramp = SubResource( 3 )
+
+[node name="CollectibleObject" type="Area2D"]
+script = ExtResource( 2 )
+DirectionVector = Vector2( -1, 0 )
+
+[node name="BackgroundAura" type="Sprite" parent="."]
+modulate = Color( 1, 0.972549, 0.721569, 0.360784 )
+position = Vector2( 5.27896, 10.3592 )
+scale = Vector2( 14, 9 )
+texture = ExtResource( 3 )
+
+[node name="CollectibleObjectSprite" type="Sprite" parent="."]
+
+[node name="CollectibleObjectCollision" type="CollisionShape2D" parent="."]
+position = Vector2( 2.99707, -12.486 )
+rotation = 1.5708
+scale = Vector2( 2, 2 )
+
+[node name="ProximityCollider" type="Area2D" parent="."]
+modulate = Color( 1, 0.262745, 0.858824, 0.858824 )
+collision_layer = 2
+collision_mask = 2
+script = ExtResource( 1 )
+
+[node name="ProximityCollisionShape" type="CollisionShape2D" parent="ProximityCollider"]
+position = Vector2( -97.1079, -8.31531 )
+rotation = 1.5708
+shape = SubResource( 1 )
+
+[node name="OnCollectedAudio" type="AudioStreamPlayer" parent="."]
+bus = "Sound"
+
+[node name="CollectibleObjectAnimation" type="AnimatedSprite" parent="."]
+visible = false
+
+[node name="OnCollectedAnimation" type="AnimatedSprite" parent="."]
+visible = false
+
+[node name="OnCollectedParticles" type="Particles2D" parent="."]
+position = Vector2( 25.4424, -4.48975 )
+emitting = false
+lifetime = 0.82
+one_shot = true
+speed_scale = 2.0
+explosiveness = 0.4
+randomness = 0.02
+process_material = SubResource( 5 )
+
+[connection signal="body_entered" from="." to="." method="OnBodyEnteredMe"]
+[connection signal="OrcaEnteredProximity" from="ProximityCollider" to="." method="OnOrcaEnteredProximity"]
+[connection signal="OrcaExitedProximity" from="ProximityCollider" to="." method="OnOrcaExitedProximity"]
+[connection signal="area_entered" from="ProximityCollider" to="ProximityCollider" method="OnAreaEnteredMe"]
+[connection signal="area_exited" from="ProximityCollider" to="ProximityCollider" method="OnAreaExitedMe"]

@@ -1,0 +1,73 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Fonts/Ubuntu50.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Scripts/Core/DialogueBox.cs" type="Script" id=2]
+[ext_resource path="res://Sounds/orca_speech.ogg" type="AudioStream" id=3]
+[ext_resource path="res://Images/button_icons/play.PNG" type="Texture" id=5]
+
+[sub_resource type="Theme" id=1]
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.0980392, 0.0980392, 0.117647, 1 )
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[node name="DialogueBox" type="VBoxContainer"]
+pause_mode = 2
+input_pass_on_modal_close_click = false
+script = ExtResource( 2 )
+
+[node name="Control" type="Control" parent="."]
+margin_right = 400.0
+margin_bottom = 120.0
+rect_min_size = Vector2( 400, 120 )
+mouse_filter = 1
+
+[node name="Triangle" type="Polygon2D" parent="Control"]
+color = Color( 0.0980392, 0.0980392, 0.117647, 1 )
+offset = Vector2( 0, 60 )
+polygon = PoolVector2Array( 10, 0, 60, -25, 60, 25 )
+
+[node name="DialogueLabel" type="Label" parent="Control"]
+margin_left = 70.0
+margin_top = 10.0
+margin_right = 340.0
+margin_bottom = 127.0
+mouse_filter = 1
+custom_fonts/font = ExtResource( 1 )
+text = "Sample Text"
+valign = 1
+autowrap = true
+
+[node name="DialogueBackgroundPanel" type="Panel" parent="Control/DialogueLabel"]
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -20.0
+margin_top = -20.0
+margin_right = 20.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 230, 0 )
+mouse_filter = 1
+theme = SubResource( 1 )
+custom_styles/panel = SubResource( 2 )
+
+[node name="NextIndicator" type="TextureRect" parent="Control/DialogueLabel/DialogueBackgroundPanel"]
+anchor_left = 0.4
+anchor_top = 1.0
+anchor_right = 0.6
+anchor_bottom = 1.0
+margin_left = 48.0
+margin_top = -60.0
+margin_bottom = -10.0
+rect_min_size = Vector2( 50, 50 )
+rect_rotation = 90.0
+texture = ExtResource( 5 )
+expand = true
+stretch_mode = 1
+
+[node name="OrcaSpeechAudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+bus = "Sound"

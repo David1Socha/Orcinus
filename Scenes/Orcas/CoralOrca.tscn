@@ -1,0 +1,78 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://Scenes/Orcas/OrcaBase.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Images/orcas/sumi/mouth_closed.PNG" type="Texture" id=2]
+[ext_resource path="res://Images/orcas/sumi/mouth_open.PNG" type="Texture" id=3]
+[ext_resource path="res://Images/orcas/sumi/tail_down.PNG" type="Texture" id=4]
+[ext_resource path="res://Images/orcas/sumi/tail_neutral.PNG" type="Texture" id=5]
+[ext_resource path="res://Images/orcas/sumi/tail_up.PNG" type="Texture" id=6]
+[ext_resource path="res://Images/orcas/sumi/bottom.PNG" type="Texture" id=7]
+[ext_resource path="res://Images/orcas/sumi/top.PNG" type="Texture" id=8]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "default",
+"speed": 3.0
+} ]
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "default",
+"speed": 8.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=3]
+radius = 249.13
+height = 326.174
+
+[node name="Orca" instance=ExtResource( 1 )]
+HorizontalSpeed = 780.0
+OrcaEnum = 1
+DialogueColor = Color( 0.792157, 0.247059, 1, 1 )
+
+[node name="OrcaMouthAnimation" parent="OrcaSprites/Viewport" index="0"]
+frames = SubResource( 1 )
+
+[node name="OrcaAnimation" parent="OrcaSprites/Viewport" index="1"]
+frames = SubResource( 2 )
+frame = 2
+
+[node name="SpeedBoostSprite" parent="SpeedBoost" index="0"]
+position = Vector2( 147.244, 11.3265 )
+
+[node name="TrailEmissionPoint" parent="." index="3"]
+position = Vector2( -72.9083, -14.9661 )
+
+[node name="ActivePowerupSprite" parent="ActivePowerup/ActivePowerupNode" index="0"]
+position = Vector2( -4.62536, 2.29135 )
+scale = Vector2( 2.23936, 1.4867 )
+
+[node name="CollisionShape2D" parent="ActivePowerup/ActivePowerupNode/PowerupEffectArea" index="0"]
+shape = SubResource( 3 )
+
+[node name="Finlet1" parent="." index="8"]
+position = Vector2( -36.7191, 1.1212 )
+
+[node name="Finlet1Front" parent="Finlet1" index="0"]
+position = Vector2( 0, 0 )
+scale = Vector2( 1, 1 )
+texture = ExtResource( 7 )
+
+[node name="Finlet2" parent="." index="9"]
+position = Vector2( -36.7191, 1.1212 )
+
+[node name="Finlet2Front" parent="Finlet2" index="0"]
+position = Vector2( 0, 0 )
+scale = Vector2( 1, 1 )
+texture = ExtResource( 8 )
+
+[node name="DialogueSource" parent="." index="14"]
+position = Vector2( 212.814, 33.1004 )
+
+[node name="Hat" parent="." index="15"]
+position = Vector2( 138, -50 )
+rotation = 0.174533

@@ -1,0 +1,86 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Fonts/Ubuntu100.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Styles/StyleBoxEmpty.tres" type="StyleBox" id=2]
+[ext_resource path="res://Scripts/MenuButton.cs" type="Script" id=3]
+[ext_resource path="res://Images/whale_tail.png" type="Texture" id=5]
+
+[node name="MenuButton" type="Button"]
+margin_right = 780.0
+margin_bottom = 200.0
+rect_min_size = Vector2( 0, 200 )
+size_flags_horizontal = 3
+size_flags_vertical = 5
+custom_styles/hover = ExtResource( 2 )
+custom_styles/pressed = ExtResource( 2 )
+custom_styles/focus = ExtResource( 2 )
+custom_styles/disabled = ExtResource( 2 )
+custom_styles/normal = ExtResource( 2 )
+shortcut_in_tooltip = false
+script = ExtResource( 3 )
+ButtonText = ""
+
+[node name="FocusIndicatorAbove" type="TextureRect" parent="."]
+visible = false
+anchor_left = 0.1
+anchor_top = -0.7
+anchor_right = 0.1
+texture = ExtResource( 5 )
+stretch_mode = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 5
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer"]
+margin_right = 50.0
+margin_bottom = 200.0
+mouse_filter = 1
+custom_constants/margin_left = 50
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer"]
+margin_left = 54.0
+margin_right = 174.0
+margin_bottom = 200.0
+rect_min_size = Vector2( 120, 0 )
+expand = true
+stretch_mode = 6
+
+[node name="MarginContainer2" type="MarginContainer" parent="HBoxContainer"]
+margin_left = 178.0
+margin_right = 208.0
+margin_bottom = 200.0
+mouse_filter = 1
+custom_constants/margin_left = 30
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+margin_left = 212.0
+margin_top = 43.0
+margin_right = 373.0
+margin_bottom = 156.0
+mouse_filter = 1
+custom_fonts/font = ExtResource( 1 )
+text = "Btn"
+
+[node name="FocusIndicator" type="TextureRect" parent="HBoxContainer"]
+visible = false
+margin_left = 596.0
+margin_right = 726.0
+margin_bottom = 200.0
+size_flags_horizontal = 10
+texture = ExtResource( 5 )
+stretch_mode = 6
+
+[node name="MarginContainer3" type="MarginContainer" parent="HBoxContainer"]
+margin_left = 377.0
+margin_right = 427.0
+margin_bottom = 200.0
+mouse_filter = 1
+custom_constants/margin_left = 50
+
+[connection signal="button_down" from="." to="." method="ButtonDown"]
+[connection signal="button_up" from="." to="." method="ButtonUp"]
+[connection signal="focus_entered" from="." to="." method="OnFocus"]
+[connection signal="focus_exited" from="." to="." method="OnUnfocus"]
+[connection signal="toggled" from="." to="." method="OnToggled"]

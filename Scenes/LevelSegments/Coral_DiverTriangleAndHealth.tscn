@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Scenes/CollectibleObjects/Powerups/AbstractPowerup.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/LevelSegments/BaseLevelSegment.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/CollectibleObjects/Diver.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/CollectibleObjects/Fish2.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/CollectibleObjects/Mine.tscn" type="PackedScene" id=5]
+
+[node name="Coral_DiverTriangleAndHealth" instance=ExtResource( 2 )]
+
+[node name="SegmentEnd" parent="." index="0"]
+position = Vector2( 1800, 0 )
+
+[node name="Diver" parent="." index="1" instance=ExtResource( 3 )]
+position = Vector2( 2034.49, 1192.01 )
+
+[node name="Diver2" parent="." index="2" instance=ExtResource( 3 )]
+position = Vector2( 701.001, 221.199 )
+
+[node name="Fish3" parent="." index="3" instance=ExtResource( 4 )]
+position = Vector2( 268.515, 881.117 )
+
+[node name="AbstractPowerup" parent="." index="4" instance=ExtResource( 1 )]
+position = Vector2( 997.291, 194.585 )
+
+[node name="Mine" parent="." index="5" instance=ExtResource( 5 )]
+position = Vector2( 502.411, 795.694 )

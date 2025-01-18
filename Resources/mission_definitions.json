@@ -1,0 +1,138 @@
+[
+    {
+        "Description": "Catch XX fish in a single run",
+        "Threshold": 15,
+        "IsSingleSession": true,
+        "AssociatedStat": 1
+    },
+    {
+        "Description": "Survive for over XX seconds",
+        "Threshold": 60,
+        "IsSingleSession": true,
+        "AssociatedStat": 5
+    },
+    {
+        "Description": "Collect XX powerups",
+        "Threshold": 6,
+        "IsSingleSession": false,
+        "AssociatedStat": 3
+    },
+
+    {
+        "Description": "Trigger a fish boost (eat 6 fish in a row)",
+        "Threshold": 1,
+        "IsSingleSession": true,
+        "AssociatedStat": 19
+    },
+    {
+        "Description": "Score XX points in a run",
+        "Threshold": 400,
+        "IsSingleSession": true,
+        "AssociatedStat": 0
+    },
+    {
+        "Description": "Use the magnet to catch XX fish",
+        "Threshold": 8,
+        "IsSingleSession": false,
+        "AssociatedStat": 31
+    },
+
+    {
+        "Description": "Rescue [b]Finn[/b] (reach [b]Arctic[/b] biome)",
+        "Threshold": 1,
+        "IsSingleSession": true,
+        "AssociatedStat": 4
+    },
+    {
+        "Description": "Eat XX penguins",
+        "Threshold": 20,
+        "IsSingleSession": false,
+        "AssociatedStat": 6
+    },
+    {
+        "Description": "Successfully dodge XX mines",
+        "Threshold": 80,
+        "IsSingleSession": false,
+        "AssociatedStat": 10
+    },
+
+    {
+        "Description": "Travel XX meters in a single run",
+        "Threshold": 100,
+        "IsSingleSession": true,
+        "AssociatedStat": 2
+    },
+    {
+        "Description": "As WW, catch XX seals",
+        "Threshold": 30,
+        "IsSingleSession": false,
+        "AssociatedStat": 7,
+        "AssociatedOrca": 2
+    },
+    {
+        "Description": "Destroy XX hazards",
+        "Threshold": 20,
+        "IsSingleSession": false,
+        "AssociatedStat": 20
+    },
+
+    {
+        "Description": "Dodge XX spears in a single run",
+        "Threshold": 6,
+        "IsSingleSession": true,
+        "AssociatedStat": 11
+    },
+    {
+        "Description": "In a run, survive for XX seconds with 0 lives",
+        "Threshold": 45,
+        "IsSingleSession": true,
+        "AssociatedStat": 32
+    },
+    {
+        "Description": "Catch XX fish",
+        "Threshold": 300,
+        "IsSingleSession": false,
+        "AssociatedStat": 1
+    },
+
+    {
+        "Description": "As WW, dodge XX lightning bolts",
+        "Threshold": 14,
+        "IsSingleSession": false,
+        "AssociatedStat": 27,
+        "AssociatedOrca": 3
+    },
+    {
+        "Description": "Complete XX biomes without taking damage",
+        "Threshold": 8,
+        "IsSingleSession": false,
+        "AssociatedStat": 30
+    },
+    {
+        "Description": "As WW, destroy XX nets in a run",
+        "Threshold": 16,
+        "IsSingleSession": true,
+        "AssociatedStat": 21,
+        "AssociatedOrca": 1
+    },
+
+    {
+        "Description": "Play with a yacht",
+        "Threshold": 1,
+        "IsSingleSession": true,
+        "AssociatedStat": 33
+    },
+    {
+        "Description": "As WW, survive for over XX seconds",
+        "Threshold": 240,
+        "IsSingleSession": true,
+        "AssociatedStat": 5,
+        "AssociatedOrca": 4
+    },
+    {
+        "Description": "Catch XX squid",
+        "Threshold": 70,
+        "IsSingleSession": true,
+        "AssociatedStat": 26
+    }
+]

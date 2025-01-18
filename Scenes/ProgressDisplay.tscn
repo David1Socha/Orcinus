@@ -1,0 +1,398 @@
+[gd_scene load_steps=32 format=2]
+
+[ext_resource path="res://Themes/OrcinusTheme.tres" type="Theme" id=1]
+[ext_resource path="res://Images/orcas/finn/finn.png" type="Texture" id=2]
+[ext_resource path="res://Images/orcas/sumi/sumi.png" type="Texture" id=3]
+[ext_resource path="res://Scenes/ProgressRow.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Images/underwaterbackgrounds.png" type="Texture" id=5]
+[ext_resource path="res://Images/underwaterbackground_arctic.png" type="Texture" id=6]
+[ext_resource path="res://Images/underwaterbackground_deepocean.png" type="Texture" id=7]
+[ext_resource path="res://Images/orcas/grandma/grandma.png" type="Texture" id=8]
+[ext_resource path="res://Images/powerups/health_powerup.PNG" type="Texture" id=9]
+[ext_resource path="res://Images/powerups/magnet_powerup.PNG" type="Texture" id=10]
+[ext_resource path="res://Images/powerups/double_fish_powerup.PNG" type="Texture" id=11]
+[ext_resource path="res://Images/powerups/triple_fish_powerup.PNG" type="Texture" id=12]
+[ext_resource path="res://Images/powerups/shield_powerup.PNG" type="Texture" id=13]
+[ext_resource path="res://Images/powerups/slow_motion_powerup.PNG" type="Texture" id=14]
+[ext_resource path="res://Images/powerups/ghost_powerup.PNG" type="Texture" id=15]
+[ext_resource path="res://Images/close_dialog_button/circle_x_unhighlighted.png" type="Texture" id=16]
+[ext_resource path="res://Images/close_dialog_button/circle_x_highlighted.png" type="Texture" id=17]
+[ext_resource path="res://Scripts/ProgressDisplay.cs" type="Script" id=18]
+[ext_resource path="res://Scenes/OrcaProgressRow.tscn" type="PackedScene" id=19]
+[ext_resource path="res://Scenes/StatDisplay/MissionContainer.tscn" type="PackedScene" id=20]
+[ext_resource path="res://Images/hats/top_hat.png" type="Texture" id=21]
+[ext_resource path="res://Images/whale_tail.png" type="Texture" id=22]
+[ext_resource path="res://Images/hats/chef_hat.png" type="Texture" id=23]
+[ext_resource path="res://Images/hats/cowgirl_hat.png" type="Texture" id=24]
+[ext_resource path="res://Images/hats/mage_hat.png" type="Texture" id=25]
+[ext_resource path="res://Images/hats/bow_hat.png" type="Texture" id=26]
+[ext_resource path="res://Images/hats/party_hat.png" type="Texture" id=27]
+[ext_resource path="res://Images/hats/santa_hat.png" type="Texture" id=28]
+[ext_resource path="res://Images/hats/jester_hat.png" type="Texture" id=29]
+[ext_resource path="res://Images/hats/crown_hat.png" type="Texture" id=30]
+
+[sub_resource type="StyleBoxFlat" id=1]
+content_margin_top = 20.0
+bg_color = Color( 0.439216, 0.541176, 0.733333, 1 )
+border_width_right = 25
+border_color = Color( 0.439216, 0.541176, 0.733333, 1 )
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[node name="ProgressDisplay" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 18 )
+
+[node name="TabContainer" type="TabContainer" parent="."]
+anchor_left = 0.03
+anchor_top = 0.01
+anchor_right = 0.97
+anchor_bottom = 0.98
+mouse_filter = 1
+theme = ExtResource( 1 )
+tab_align = 0
+
+[node name="Orcas" type="ScrollContainer" parent="TabContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 107.0
+custom_styles/bg = SubResource( 1 )
+scroll_horizontal_enabled = false
+
+[node name="OrcasVbox" type="VBoxContainer" parent="TabContainer/Orcas"]
+margin_top = 20.0
+margin_right = 2301.4
+margin_bottom = 2280.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 20
+
+[node name="Sumi" parent="TabContainer/Orcas/OrcasVbox" instance=ExtResource( 19 )]
+margin_right = 2301.0
+margin_bottom = 550.0
+Icon = ExtResource( 3 )
+Title = "Sumi"
+Description = "Sumi escaped SlamWharf to rescue her pod. Like all female orcas, she has a curved dorsal fin."
+Orca = 1
+SpeedStat = 60
+PowerStat = 45
+AgilityStat = 55
+SizeStat = 50
+
+[node name="Finn" parent="TabContainer/Orcas/OrcasVbox" instance=ExtResource( 19 )]
+margin_top = 570.0
+margin_right = 2301.0
+margin_bottom = 1120.0
+Icon = ExtResource( 2 )
+Title = "Finn"
+Description = "Finn is named for his tall dorsal fin. His bulky frame sets him apart as the strongest orca in the pod."
+Orca = 2
+SpeedStat = 50
+PowerStat = 80
+AgilityStat = 50
+SizeStat = 90
+
+[node name="Nori" parent="TabContainer/Orcas/OrcasVbox" instance=ExtResource( 19 )]
+margin_top = 1140.0
+margin_right = 2301.0
+margin_bottom = 1690.0
+Description = "Nori is playful, like most baby orcas. Her cute size helps her avoid danger, but she's not as quick as the adults."
+Orca = 3
+SpeedStat = 50
+PowerStat = 20
+AgilityStat = 35
+SizeStat = 15
+
+[node name="Blanca" parent="TabContainer/Orcas/OrcasVbox" instance=ExtResource( 19 )]
+margin_top = 1710.0
+margin_right = 2301.0
+margin_bottom = 2260.0
+Icon = ExtResource( 8 )
+Title = "Blanca"
+Description = "Blanca's skin has whitened with age, but she's still the tough and tender matriarch leader of the pod."
+Orca = 4
+SpeedStat = 30
+PowerStat = 70
+AgilityStat = 50
+SizeStat = 75
+
+[node name="Biomes" type="ScrollContainer" parent="TabContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 107.0
+custom_styles/bg = SubResource( 1 )
+scroll_horizontal_enabled = false
+
+[node name="Biomes" type="VBoxContainer" parent="TabContainer/Biomes"]
+margin_top = 20.0
+margin_right = 2381.4
+margin_bottom = 1289.8
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 20
+
+[node name="Coral" parent="TabContainer/Biomes/Biomes" instance=ExtResource( 4 )]
+margin_right = 2381.0
+Icon = ExtResource( 5 )
+Title = "Coral Biome"
+Description = "Coral reefs are known for their high biodiversity, teeming with colorful fish and fauna."
+Biome = 1
+IconAnchorPadding = 0.15
+
+[node name="Arctic" parent="TabContainer/Biomes/Biomes" instance=ExtResource( 4 )]
+margin_top = 320.0
+margin_right = 2381.0
+margin_bottom = 620.0
+Icon = ExtResource( 6 )
+Title = "Arctic Biome"
+Description = "Though Arctic waters are freezing cold, they're rich in hearty marine life, including penguins and seals."
+Biome = 2
+IconAnchorPadding = 0.15
+
+[node name="SeaCave" parent="TabContainer/Biomes/Biomes" instance=ExtResource( 4 )]
+margin_top = 640.0
+margin_right = 2381.0
+margin_bottom = 940.0
+Icon = ExtResource( 7 )
+Title = "Sea Cave Biome"
+Description = "A Sea Cave's unique rock features are carved by wave action. Bioluminescent creatures light up the dark enviroment. "
+Biome = 3
+IconAnchorPadding = 0.15
+
+[node name="Powerups" type="ScrollContainer" parent="TabContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 107.0
+custom_styles/bg = SubResource( 1 )
+scroll_horizontal_enabled = false
+
+[node name="Powerups" type="VBoxContainer" parent="TabContainer/Powerups"]
+margin_top = 20.0
+margin_right = 2381.4
+margin_bottom = 2240.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 20
+
+[node name="HealthPack" parent="TabContainer/Powerups/Powerups" instance=ExtResource( 4 )]
+margin_right = 2301.0
+Icon = ExtResource( 9 )
+Title = "Health Pack"
+Description = "Restores an extra life when collected. Don't spend them all in one place!"
+Powerup = 0
+IconAnchorPadding = 0.27
+
+[node name="Magnet" parent="TabContainer/Powerups/Powerups" instance=ExtResource( 4 )]
+margin_top = 320.0
+margin_right = 2301.0
+margin_bottom = 620.0
+Icon = ExtResource( 10 )
+Title = "Magnet"
+Description = "Pulls fish towards you for easy consumption. Their bones must have some metal."
+Powerup = 4
+IconAnchorPadding = 0.27
+
+[node name="DoubleFish" parent="TabContainer/Powerups/Powerups" instance=ExtResource( 4 )]
+margin_top = 640.0
+margin_right = 2301.0
+margin_bottom = 940.0
+Icon = ExtResource( 11 )
+Title = "Double Fish"
+Description = "Doubles the value of any fish eaten while this powerup is active."
+Powerup = 1
+IconAnchorPadding = 0.27
+
+[node name="Shield" parent="TabContainer/Powerups/Powerups" instance=ExtResource( 4 )]
+margin_top = 960.0
+margin_right = 2301.0
+margin_bottom = 1260.0
+Icon = ExtResource( 13 )
+Title = "Shield"
+Description = "Defends you from obstacles, destroying any that collide with the shield."
+Powerup = 3
+IconAnchorPadding = 0.27
+
+[node name="SlowMotion" parent="TabContainer/Powerups/Powerups" instance=ExtResource( 4 )]
+margin_top = 1280.0
+margin_right = 2301.0
+margin_bottom = 1580.0
+Icon = ExtResource( 14 )
+Title = "Slow Motion"
+Description = "Slows down time while this powerup is active."
+Powerup = 5
+IconAnchorPadding = 0.27
+
+[node name="Ghost" parent="TabContainer/Powerups/Powerups" instance=ExtResource( 4 )]
+margin_top = 1600.0
+margin_right = 2301.0
+margin_bottom = 1900.0
+Icon = ExtResource( 15 )
+Title = "Ghost"
+Description = "Become intangible, dodging any obstacles while this is active. Also gives a spooky look."
+Powerup = 6
+IconAnchorPadding = 0.27
+
+[node name="TripleFish" parent="TabContainer/Powerups/Powerups" instance=ExtResource( 4 )]
+margin_top = 1920.0
+margin_right = 2301.0
+margin_bottom = 2220.0
+Icon = ExtResource( 12 )
+Title = "Triple Fish"
+Description = "Triples the value of any fish eaten while this powerup is active. 50% better than the Double Fish!"
+Powerup = 2
+IconAnchorPadding = 0.27
+
+[node name="Missions" type="ScrollContainer" parent="TabContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 107.0
+custom_styles/bg = SubResource( 1 )
+scroll_horizontal_enabled = false
+
+[node name="MarginContainer" type="MarginContainer" parent="TabContainer/Missions"]
+margin_top = 20.0
+margin_right = 2381.4
+margin_bottom = 1289.8
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 200
+custom_constants/margin_top = 200
+custom_constants/margin_left = 200
+custom_constants/margin_bottom = 400
+
+[node name="MissionContainer" parent="TabContainer/Missions/MarginContainer" instance=ExtResource( 20 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 200.0
+margin_top = 200.0
+margin_right = 2181.0
+margin_bottom = 869.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Hats" type="ScrollContainer" parent="TabContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 107.0
+custom_styles/bg = SubResource( 1 )
+scroll_horizontal_enabled = false
+
+[node name="Hats" type="VBoxContainer" parent="TabContainer/Hats"]
+margin_top = 20.0
+margin_right = 2381.4
+margin_bottom = 3200.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 20
+
+[node name="None" parent="TabContainer/Hats/Hats" instance=ExtResource( 4 )]
+Icon = ExtResource( 22 )
+Title = "None"
+Description = "No accessories needed, you're naturally stylish!"
+Biome = 1
+Hat = 0
+IconAnchorPadding = 0.28
+
+[node name="Top" parent="TabContainer/Hats/Hats" instance=ExtResource( 4 )]
+margin_top = 320.0
+margin_bottom = 620.0
+Icon = ExtResource( 21 )
+Title = "Top Hat"
+Description = "A dapper looking top hat."
+Hat = 9
+IconAnchorPadding = 0.15
+
+[node name="Chef" parent="TabContainer/Hats/Hats" instance=ExtResource( 4 )]
+margin_top = 320.0
+margin_bottom = 620.0
+Icon = ExtResource( 23 )
+Title = "Chef Hat"
+Description = "For cooking up a storm... or some sushi."
+Hat = 2
+IconAnchorPadding = 0.15
+
+[node name="Cowhand" parent="TabContainer/Hats/Hats" instance=ExtResource( 4 )]
+margin_top = 320.0
+margin_bottom = 620.0
+Icon = ExtResource( 24 )
+Title = "Cowhand Hat"
+Description = "Howdy Partner!"
+Hat = 3
+IconAnchorPadding = 0.15
+
+[node name="Magician" parent="TabContainer/Hats/Hats" instance=ExtResource( 4 )]
+margin_top = 320.0
+margin_bottom = 620.0
+Icon = ExtResource( 25 )
+Title = "Magician Hat"
+Description = "Make those fish disappear."
+Hat = 6
+IconAnchorPadding = 0.15
+
+[node name="Bow" parent="TabContainer/Hats/Hats" instance=ExtResource( 4 )]
+margin_top = 320.0
+margin_bottom = 620.0
+Icon = ExtResource( 26 )
+Title = "Bow"
+Description = "It's debatable whether a bow really counts as a hat... but it's definitely fun!"
+Hat = 1
+IconAnchorPadding = 0.15
+
+[node name="Party" parent="TabContainer/Hats/Hats" instance=ExtResource( 4 )]
+margin_top = 320.0
+margin_bottom = 620.0
+Icon = ExtResource( 27 )
+Title = "Party Hat"
+Description = "Feeling festive!!"
+Hat = 7
+IconAnchorPadding = 0.15
+
+[node name="Santa" parent="TabContainer/Hats/Hats" instance=ExtResource( 4 )]
+margin_top = 320.0
+margin_bottom = 620.0
+Icon = ExtResource( 28 )
+Title = "Santa Hat"
+Description = "All orcas are on the nice list."
+Hat = 8
+IconAnchorPadding = 0.15
+
+[node name="Jester" parent="TabContainer/Hats/Hats" instance=ExtResource( 4 )]
+margin_top = 320.0
+margin_bottom = 620.0
+Icon = ExtResource( 29 )
+Title = "Jester Hat"
+Description = "The joke is on SlamWharf - orcas are born to be wild!"
+Hat = 5
+IconAnchorPadding = 0.15
+
+[node name="Crown" parent="TabContainer/Hats/Hats" instance=ExtResource( 4 )]
+margin_top = 320.0
+margin_bottom = 620.0
+Icon = ExtResource( 30 )
+Title = "Crown"
+Description = "For those with leadership skills."
+Hat = 4
+IconAnchorPadding = 0.15
+
+[node name="CloseButton" type="TextureButton" parent="."]
+anchor_left = 0.93
+anchor_right = 1.0
+margin_left = -10.0
+margin_top = -7.517
+margin_right = -10.0
+margin_bottom = 178.483
+texture_normal = ExtResource( 16 )
+texture_pressed = ExtResource( 17 )
+texture_hover = ExtResource( 17 )
+expand = true
+stretch_mode = 5
+
+[connection signal="visibility_changed" from="." to="." method="OnVisibilityChanged"]
+[connection signal="pressed" from="CloseButton" to="." method="OnCloseButtonPressed"]

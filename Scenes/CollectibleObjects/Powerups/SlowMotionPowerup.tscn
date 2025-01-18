@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scenes/CollectibleObjects/Base/CollectiblePowerup.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Images/powerups/slow_motion_powerup.PNG" type="Texture" id=3]
+
+[node name="SlowMotionPowerup" instance=ExtResource( 2 )]
+Type = 5
+Duration = 5.0
+ModulateColor = Color( 0.333333, 0.219608, 0.447059, 1 )
+PowerupIcon = ExtResource( 3 )
+
+[node name="CollectibleObjectSprite" parent="." index="1"]
+position = Vector2( 3.69342, 5.50722 )
+texture = ExtResource( 3 )

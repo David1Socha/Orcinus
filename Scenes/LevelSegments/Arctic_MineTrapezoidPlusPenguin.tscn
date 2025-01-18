@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scenes/CollectibleObjects/Penguin.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/LevelSegments/BaseLevelSegment.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/CollectibleObjects/Mine.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/CollectibleObjects/Fish2.tscn" type="PackedScene" id=4]
+
+[node name="Arctic_PenguinAndMines" instance=ExtResource( 2 )]
+
+[node name="SegmentEnd" parent="." index="0"]
+position = Vector2( 1400, 0 )
+
+[node name="Fish3" parent="." index="1" instance=ExtResource( 1 )]
+position = Vector2( 1316.85, 837.676 )
+Velocity = 200.0
+
+[node name="Mine" parent="." index="2" instance=ExtResource( 3 )]
+position = Vector2( 245.401, 827.519 )
+
+[node name="Mine2" parent="." index="3" instance=ExtResource( 3 )]
+position = Vector2( 924.893, 1100.14 )
+
+[node name="Mine3" parent="." index="4" instance=ExtResource( 3 )]
+position = Vector2( 618.373, 386.063 )
+
+[node name="Mine4" parent="." index="5" instance=ExtResource( 3 )]
+position = Vector2( 945.594, 530.24 )
+
+[node name="Fish2" parent="." index="6" instance=ExtResource( 4 )]
+position = Vector2( 562.775, 620.648 )

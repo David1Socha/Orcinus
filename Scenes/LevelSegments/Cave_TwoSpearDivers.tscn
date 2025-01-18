@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scenes/CollectibleObjects/Squid.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/LevelSegments/BaseLevelSegment.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/CollectibleObjects/Net.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/CollectibleObjects/DiverWithSpear.tscn" type="PackedScene" id=5]
+
+[node name="Cave_TwoSpearDivers" instance=ExtResource( 2 )]
+
+[node name="SegmentEnd" parent="." index="0"]
+position = Vector2( 1333.71, 0 )
+
+[node name="Net" parent="." index="1" instance=ExtResource( 4 )]
+position = Vector2( 175.18, 713.256 )
+rotation = -1.57079
+
+[node name="Squid" parent="." index="2" instance=ExtResource( 1 )]
+position = Vector2( 1443.53, 263.636 )
+
+[node name="DiverWithSpear" parent="." index="3" instance=ExtResource( 5 )]
+position = Vector2( 1346.33, 277.186 )
+
+[node name="Squid2" parent="." index="4" instance=ExtResource( 1 )]
+position = Vector2( 698.714, 1193.25 )
+
+[node name="DiverWithSpear2" parent="." index="5" instance=ExtResource( 5 )]
+position = Vector2( 601.512, 1206.8 )

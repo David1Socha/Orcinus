@@ -1,0 +1,45 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Scenes/CollectibleObjects/Base/CollectibleHazard.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Images/net/net_3.PNG" type="Texture" id=2]
+[ext_resource path="res://Images/net/net_1.PNG" type="Texture" id=3]
+[ext_resource path="res://Images/net/net_2.PNG" type="Texture" id=4]
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 205.98
+height = 211.73
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 3 ), ExtResource( 2 ) ],
+"loop": true,
+"name": "default",
+"speed": 3.7
+} ]
+
+[node name="Net" instance=ExtResource( 1 )]
+OnDestroyedStatType = 9
+OnNearMissedStatType = 14
+DestroyedObstacleStatType = 21
+
+[node name="CollectibleObjectSprite" parent="." index="1"]
+scale = Vector2( 0.8, 0.8 )
+
+[node name="CollectibleObjectCollision" parent="." index="2"]
+visible = false
+position = Vector2( 14.1871, -11.4413 )
+disabled = true
+
+[node name="ProximityCollisionShape" parent="ProximityCollider" index="0"]
+position = Vector2( 1.66883, -9.81189 )
+shape = SubResource( 2 )
+
+[node name="CollectibleObjectCollisionPolygon" type="CollisionPolygon2D" parent="." index="4"]
+polygon = PoolVector2Array( 20.0166, 83.1667, 48.8264, 97.0104, 95.6664, 82, 128.666, 55.3333, 142.726, 38.6985, 158.333, 2.33334, 171.333, -17.3333, 184.751, -46.7648, 184.045, -63.5397, -195.255, -64.3561, -141.563, 49.1166, -79.1341, 90.2756, -24.5077, 77.5544 )
+
+[node name="CollectibleObjectAnimation" parent="." index="6"]
+visible = true
+position = Vector2( -0.374145, 16.0886 )
+scale = Vector2( 0.8, 0.8 )
+frames = SubResource( 1 )
+playing = true

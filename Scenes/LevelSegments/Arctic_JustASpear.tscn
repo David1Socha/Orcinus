@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scenes/CollectibleObjects/DiverWithSpear.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/LevelSegments/BaseLevelSegment.tscn" type="PackedScene" id=2]
+
+[node name="Arctic_JustASpear" instance=ExtResource( 2 )]
+
+[node name="DiverWithSpear" parent="." index="0" instance=ExtResource( 1 )]
+position = Vector2( 666.568, 753.205 )
+PositionVariance = Vector2( 0, 500 )
+
+[node name="SegmentEnd" parent="." index="1"]
+position = Vector2( 437.357, 0 )

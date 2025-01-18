@@ -1,0 +1,6 @@
+[gd_scene format=2]
+
+[node name="BaseHatSprite" type="Sprite"]
+scale = Vector2( 0.5, 0.5 )
+
+[node name="OrcaVisualizerEditorOnly" type="Node" parent="."]

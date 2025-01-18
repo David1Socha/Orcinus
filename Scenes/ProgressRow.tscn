@@ -1,0 +1,115 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Images/orcas/baby/baby.png" type="Texture" id=1]
+[ext_resource path="res://Themes/OrcinusTheme.tres" type="Theme" id=3]
+[ext_resource path="res://Scripts/ProgressRow.cs" type="Script" id=4]
+[ext_resource path="res://ProgressRowButtonGroup.tres" type="ButtonGroup" id=5]
+[ext_resource path="res://Fonts/UbuntuBold85.tres" type="DynamicFont" id=6]
+[ext_resource path="res://Fonts/Ubuntu50.tres" type="DynamicFont" id=7]
+
+[sub_resource type="StyleBoxFlat" id=2]
+content_margin_right = 50.0
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color( 1, 1, 1, 0.321569 )
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="StyleBoxFlat" id=5]
+content_margin_right = 50.0
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color( 1, 1, 1, 1 )
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="StyleBoxFlat" id=4]
+content_margin_right = 50.0
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+border_color = Color( 1, 1, 1, 0.321569 )
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[node name="ProgressRow" type="Control"]
+margin_right = 2535.0
+margin_bottom = 300.0
+rect_min_size = Vector2( 0, 300 )
+mouse_filter = 1
+size_flags_horizontal = 3
+theme = ExtResource( 3 )
+script = ExtResource( 4 )
+Icon = ExtResource( 1 )
+Title = "Nori"
+Description = "Nori is a cute little baby orca. She can't swim as fast as the grown ups."
+
+[node name="IconControl" type="Control" parent="."]
+anchor_right = 0.33
+anchor_bottom = 1.0
+
+[node name="Icon" type="TextureRect" parent="IconControl"]
+anchor_left = 0.05
+anchor_right = 0.95
+anchor_bottom = 1.0
+rect_clip_content = true
+texture = ExtResource( 1 )
+expand = true
+stretch_mode = 7
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_left = 0.35
+anchor_right = 0.75
+anchor_bottom = 1.0
+
+[node name="Title" type="Label" parent="VBoxContainer"]
+margin_top = 22.0
+margin_right = 1014.0
+margin_bottom = 119.0
+size_flags_vertical = 6
+custom_fonts/font = ExtResource( 6 )
+text = "Nori"
+align = 1
+
+[node name="Description" type="Label" parent="VBoxContainer"]
+margin_top = 145.0
+margin_right = 1014.0
+margin_bottom = 262.0
+size_flags_vertical = 2
+custom_fonts/font = ExtResource( 7 )
+text = "Nori is a cute little baby orca. She can't swim as fast as the grown ups."
+autowrap = true
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
+margin_top = 290.0
+margin_right = 1014.0
+margin_bottom = 300.0
+custom_constants/margin_top = 10
+
+[node name="Button" type="Button" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 1
+custom_fonts/font = ExtResource( 6 )
+custom_styles/hover = SubResource( 2 )
+custom_styles/pressed = SubResource( 5 )
+custom_styles/focus = SubResource( 2 )
+custom_styles/disabled = SubResource( 4 )
+custom_styles/normal = SubResource( 4 )
+toggle_mode = true
+group = ExtResource( 5 )
+text = "Active"
+align = 2
+
+[connection signal="focus_entered" from="Button" to="." method="GrabFocusForRow"]
+[connection signal="toggled" from="Button" to="." method="OnToggled"]

@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scenes/CollectibleObjects/Fish1.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/LevelSegments/BaseLevelSegment.tscn" type="PackedScene" id=2]
+
+[node name="Tutorial_1" instance=ExtResource( 2 )]
+
+[node name="SegmentEnd" parent="." index="0"]
+position = Vector2( 2118.14, 0 )
+
+[node name="Fish" parent="." index="1" groups=["collectible"] instance=ExtResource( 1 )]
+position = Vector2( -763.805, 1260.01 )
+DisabledOnLoad = false

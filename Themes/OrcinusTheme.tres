@@ -1,0 +1,91 @@
+[gd_resource type="Theme" load_steps=13 format=2]
+
+[ext_resource path="res://Fonts/Ubuntu35.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Fonts/UbuntuBold65.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Fonts/UbuntuBold85.tres" type="DynamicFont" id=3]
+
+[sub_resource type="StyleBoxFlat" id=25]
+bg_color = Color( 0.439216, 0.541176, 0.733333, 0.866667 )
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+
+[sub_resource type="StyleBoxFlat" id=24]
+bg_color = Color( 0.756863, 0.764706, 0.764706, 1 )
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="StyleBoxFlat" id=21]
+bg_color = Color( 0.262745, 0.129412, 0.129412, 0 )
+expand_margin_top = 100.0
+
+[sub_resource type="StyleBoxFlat" id=16]
+content_margin_left = 40.0
+content_margin_right = 40.0
+bg_color = Color( 0.380392, 0.470588, 0.639216, 1 )
+border_width_left = 10
+border_width_right = 10
+border_color = Color( 0.8, 0.8, 0.8, 0 )
+corner_radius_top_left = 20
+corner_radius_top_right = 25
+
+[sub_resource type="StyleBoxFlat" id=17]
+content_margin_left = 40.0
+content_margin_right = 40.0
+bg_color = Color( 0.439216, 0.541176, 0.733333, 1 )
+border_width_left = 10
+border_width_right = 10
+border_color = Color( 0.8, 0.8, 0.8, 0 )
+corner_radius_top_left = 20
+corner_radius_top_right = 25
+
+[sub_resource type="StyleBoxFlat" id=19]
+content_margin_bottom = 50.0
+bg_color = Color( 0.537255, 0.54902, 0.54902, 1 )
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="StyleBoxFlat" id=22]
+content_margin_bottom = 50.0
+bg_color = Color( 0.537255, 0.54902, 0.54902, 1 )
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="StyleBoxFlat" id=23]
+content_margin_bottom = 50.0
+bg_color = Color( 0.537255, 0.54902, 0.54902, 1 )
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="StyleBoxFlat" id=20]
+bg_color = Color( 0.537255, 0.54902, 0.54902, 1 )
+border_width_left = 80
+border_color = Color( 1, 1, 1, 0 )
+
+[resource]
+default_font = ExtResource( 1 )
+Button/fonts/font = ExtResource( 2 )
+Button/styles/disabled = null
+Button/styles/focus = null
+Button/styles/hover = null
+Button/styles/normal = SubResource( 25 )
+Button/styles/pressed = null
+CheckButton/styles/normal = SubResource( 24 )
+TabContainer/constants/hseparation = 400
+TabContainer/constants/side_margin = 100
+TabContainer/constants/top_margin = 24
+TabContainer/fonts/font = ExtResource( 3 )
+TabContainer/styles/panel = SubResource( 21 )
+TabContainer/styles/tab_bg = SubResource( 16 )
+TabContainer/styles/tab_fg = SubResource( 17 )
+VScrollBar/styles/grabber = SubResource( 19 )
+VScrollBar/styles/grabber_highlight = SubResource( 22 )
+VScrollBar/styles/grabber_pressed = SubResource( 23 )
+VScrollBar/styles/scroll = SubResource( 20 )

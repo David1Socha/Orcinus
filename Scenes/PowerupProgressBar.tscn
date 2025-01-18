@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scenes/Core/ProgressBar.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scripts/PowerupProgressBar.cs" type="Script" id=2]
+[ext_resource path="res://Images/whale_tail.png" type="Texture" id=4]
+
+[node name="ProgressBar" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+Progress = 0.477
+PowerupIcon = ExtResource( 4 )
+
+[node name="ProgressRect" parent="." index="1"]
+anchor_right = 0.477
+
+[node name="PowerupIcon" type="TextureRect" parent="." index="2"]
+margin_left = -20.0
+margin_top = -10.0
+margin_right = 150.0
+margin_bottom = 160.0
+grow_horizontal = 0
+rect_scale = Vector2( -1, 1 )
+texture = ExtResource( 4 )
+expand = true
+stretch_mode = 6
+flip_h = true

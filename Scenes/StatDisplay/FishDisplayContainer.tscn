@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scenes/StatDisplay/StatDisplayContainer.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Images/gameplay_icons/fish_icon.PNG" type="Texture" id=2]
+
+[node name="FishDisplayContainer" instance=ExtResource( 1 )]
+hint_tooltip = "Fish"
+StatToDisplay = 1
+
+[node name="TextureRect" parent="MarginContainer" index="1"]
+grow_horizontal = 0
+texture = ExtResource( 2 )
+stretch_mode = 6

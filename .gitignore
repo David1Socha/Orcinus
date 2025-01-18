@@ -1,0 +1,44 @@
+# Godot-specific ignores
+.import/
+export.cfg
+
+# Imported translations (automatically generated from CSV files)
+*.translation
+
+# Mono-specific ignores
+.mono/
+data_*/
+obj/
+.vs/
+bin/
+
+# Export directories
+WindowsExport/
+WindowsExport.zip
+WindowsExport32/
+WindowsExport32.zip
+MacExport/
+MacExport.zip
+LinuxExport/
+LinuxExport.zip
+Html5Export/
+Html5Export.zip
+AndroidExport/
+AndroidExport.zip
+IosExport/
+IosExport.zip
+android/
+
+# krita backups 
+*.kra~
+*.kra-autosave.kra
+*.png~
+
+# lmms backups
+*.mmpz.bak
+
+.DS_Store
+
+# steam api ignores
+steam_api.dll
+steam_api64.dll 

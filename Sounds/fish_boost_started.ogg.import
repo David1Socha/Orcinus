@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/fish_boost_started.ogg-5dc1228cf050056e2cf9d0ea9957d613.oggstr"
+
+[deps]
+
+source_file="res://Sounds/fish_boost_started.ogg"
+dest_files=[ "res://.import/fish_boost_started.ogg-5dc1228cf050056e2cf9d0ea9957d613.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

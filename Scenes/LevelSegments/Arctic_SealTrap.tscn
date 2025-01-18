@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Scenes/CollectibleObjects/Seal.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/LevelSegments/BaseLevelSegment.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/CollectibleObjects/Mine.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/CollectibleObjects/Net.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/CollectibleObjects/Fish1.tscn" type="PackedScene" id=5]
+
+[node name="Arctic_PenguinAndMines" instance=ExtResource( 2 )]
+
+[node name="SegmentEnd" parent="." index="0"]
+position = Vector2( 1600, 0 )
+
+[node name="Mine" parent="." index="1" instance=ExtResource( 3 )]
+position = Vector2( 239.919, 1314.02 )
+
+[node name="Mine2" parent="." index="2" instance=ExtResource( 3 )]
+position = Vector2( 1393.12, 1308.74 )
+SpawnProbability = 0.6
+
+[node name="Mine3" parent="." index="3" instance=ExtResource( 3 )]
+position = Vector2( 780.94, 105.127 )
+
+[node name="Seal" parent="." index="4" instance=ExtResource( 1 )]
+position = Vector2( 1292.04, 1290.03 )
+
+[node name="Net" parent="." index="5" instance=ExtResource( 4 )]
+position = Vector2( 795.148, 912.051 )
+rotation = 3.14159
+
+[node name="Fish1" parent="." index="6" instance=ExtResource( 5 )]
+position = Vector2( 1161.01, 503.837 )

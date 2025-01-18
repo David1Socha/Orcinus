@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 125.874, 766.181 )
+
+[node name="BaseLevelSegment" type="Node2D"]
+
+[node name="SegmentEnd" type="Area2D" parent="." groups=["level_segment_end"]]
+position = Vector2( 2562.55, 0 )
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SegmentEnd"]
+modulate = Color( 1, 0.666667, 0, 1 )
+position = Vector2( 0, 730.449 )
+shape = SubResource( 1 )

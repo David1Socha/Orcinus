@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scenes/CollectibleObjects/DiverWithSpear.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/LevelSegments/BaseLevelSegment.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/CollectibleObjects/Seal.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/CollectibleObjects/Fish3.tscn" type="PackedScene" id=4]
+
+[node name="Arctic_SpearVolley" instance=ExtResource( 2 )]
+
+[node name="DiverWithSpear" parent="." index="0" instance=ExtResource( 1 )]
+position = Vector2( 1370.57, 1226.54 )
+PositionVariance = Vector2( 0, 10 )
+
+[node name="DiverWithSpear2" parent="." index="1" instance=ExtResource( 1 )]
+position = Vector2( 765.235, 762.538 )
+PositionVariance = Vector2( 0, 10 )
+
+[node name="DiverWithSpear3" parent="." index="2" instance=ExtResource( 1 )]
+position = Vector2( 230.568, 259.871 )
+PositionVariance = Vector2( 0, 10 )
+
+[node name="SegmentEnd" parent="." index="3"]
+position = Vector2( 1537.36, 0 )
+
+[node name="Fish3" parent="." index="4" instance=ExtResource( 4 )]
+position = Vector2( 743.902, 230.539 )
+
+[node name="Seal" parent="." index="5" instance=ExtResource( 3 )]
+position = Vector2( 1281.23, 726.539 )

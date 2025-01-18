@@ -1,0 +1,41 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scenes/StatDisplay/MissionDisplay.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Fonts/UbuntuBold65.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Scripts/CurrentLevelLabel.cs" type="Script" id=3]
+
+[node name="MissionContainer" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="MissionContainer" type="HBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 0.9
+size_flags_horizontal = 3
+custom_constants/separation = 50
+alignment = 1
+
+[node name="MissionDisplay" parent="MissionContainer" instance=ExtResource( 1 )]
+margin_right = 820.0
+margin_bottom = 1296.0
+
+[node name="MissionDisplay2" parent="MissionContainer" instance=ExtResource( 1 )]
+margin_left = 870.0
+margin_right = 1690.0
+margin_bottom = 1296.0
+MissionOffset = 1
+
+[node name="MissionDisplay3" parent="MissionContainer" instance=ExtResource( 1 )]
+margin_left = 1740.0
+margin_right = 2560.0
+margin_bottom = 1296.0
+MissionOffset = 2
+
+[node name="CurrentLevelLabel" type="Label" parent="."]
+anchor_top = 0.9
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 2 )
+text = "Level 1"
+align = 1
+script = ExtResource( 3 )

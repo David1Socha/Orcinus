@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/seasong_4.ogg-f3765a42090cdcace112038f220c19e4.oggstr"
+
+[deps]
+
+source_file="res://Sounds/seasong_4.ogg"
+dest_files=[ "res://.import/seasong_4.ogg-f3765a42090cdcace112038f220c19e4.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

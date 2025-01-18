@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Scripts/CollectibleObjects/CollectiblePrize.cs" type="Script" id=1]
+[ext_resource path="res://Scenes/CollectibleObjects/Base/CollectibleObject.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Images/gameplay_icons/fish_icon.PNG" type="Texture" id=3]
+[ext_resource path="res://Sounds/fish_collected.ogg" type="AudioStream" id=5]
+[ext_resource path="res://Images/highlight_circle.png" type="Texture" id=6]
+
+[node name="CollectiblePrize" instance=ExtResource( 2 )]
+z_index = -2
+script = ExtResource( 1 )
+PositionVariance = Vector2( 15, 30 )
+FishValue = 1
+
+[node name="BackgroundAura" parent="." index="0"]
+modulate = Color( 1, 0.972549, 0.909804, 0.509804 )
+position = Vector2( 50.7148, -6.86489 )
+scale = Vector2( 8.61006, 5.67398 )
+texture = ExtResource( 6 )
+
+[node name="OnCollectedAudio" parent="." index="4"]
+stream = ExtResource( 5 )
+pitch_scale = 0.91
+
+[node name="OnCollectedParticles" parent="." index="7"]
+scale = Vector2( 2, 2 )
+texture = ExtResource( 3 )
+
+[node name="DialogueSource" type="Node2D" parent="." index="8"]

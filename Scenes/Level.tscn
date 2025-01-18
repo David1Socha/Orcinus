@@ -1,0 +1,665 @@
+[gd_scene load_steps=103 format=2]
+
+[ext_resource path="res://Scenes/LevelSegments/Coral_FishBetweenNets.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/LevelSegments/Coral_DiversBetweenFish.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Fonts/Ubuntu100.tres" type="DynamicFont" id=3]
+[ext_resource path="res://Scripts/InGameUI.cs" type="Script" id=4]
+[ext_resource path="res://Images/underwaterbackgrounds/background_3.PNG" type="Texture" id=5]
+[ext_resource path="res://Scripts/CollectibleObjects/CollectiblesTerminator.cs" type="Script" id=6]
+[ext_resource path="res://Images/underwaterbackgrounds/background_4.PNG" type="Texture" id=7]
+[ext_resource path="res://Scenes/Orcas/CoralOrca.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Shortcuts/RestartShortcut.tres" type="ShortCut" id=9]
+[ext_resource path="res://Scripts/Level.cs" type="Script" id=10]
+[ext_resource path="res://Scenes/InvisibleWall.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Fonts/UbuntuBold150.tres" type="DynamicFont" id=12]
+[ext_resource path="res://Scripts/GameOver.cs" type="Script" id=13]
+[ext_resource path="res://Scripts/OrcaHorizontalFollower.cs" type="Script" id=14]
+[ext_resource path="res://Scenes/LevelSegments/Coral_FishBetweenMines.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Sounds/seasong_4.ogg" type="AudioStream" id=16]
+[ext_resource path="res://Scripts/CollectibleObjects/CollectiblesActivator.cs" type="Script" id=17]
+[ext_resource path="res://Fonts/Ubuntu150.tres" type="DynamicFont" id=18]
+[ext_resource path="res://Shaders/BlurShader2d.gdshader" type="Shader" id=19]
+[ext_resource path="res://Styles/StyleBoxEmpty.tres" type="StyleBox" id=20]
+[ext_resource path="res://Images/button_icons/play.PNG" type="Texture" id=21]
+[ext_resource path="res://Scenes/LevelSegments/Coral_JustAFish.tscn" type="PackedScene" id=22]
+[ext_resource path="res://Images/button_icons/home.PNG" type="Texture" id=23]
+[ext_resource path="res://Scripts/Pause.cs" type="Script" id=24]
+[ext_resource path="res://Scenes/LevelSegments/Cave_TwoLightningDivers.tscn" type="PackedScene" id=25]
+[ext_resource path="res://Scenes/LevelSegments/Arctic_RisingNetDiagonal.tscn" type="PackedScene" id=26]
+[ext_resource path="res://Images/button_icons/pause.PNG" type="Texture" id=27]
+[ext_resource path="res://Images/button_icons/restart.PNG" type="Texture" id=28]
+[ext_resource path="res://Scenes/MenuButton.tscn" type="PackedScene" id=29]
+[ext_resource path="res://Scenes/LevelSegments/Tutorial_LevelSegment.tscn" type="PackedScene" id=30]
+[ext_resource path="res://Scenes/LevelSegments/Coral_FishBetweenNarrowNets.tscn" type="PackedScene" id=31]
+[ext_resource path="res://Scenes/LevelSegments/Coral_FourFishBetweenObstacles.tscn" type="PackedScene" id=32]
+[ext_resource path="res://Scenes/LevelSegments/Arctic_FallingNetDiagonal.tscn" type="PackedScene" id=33]
+[ext_resource path="res://Scenes/StatDisplay/DistanceDisplayContainer.tscn" type="PackedScene" id=34]
+[ext_resource path="res://Scenes/StatDisplay/FishDisplayContainer.tscn" type="PackedScene" id=35]
+[ext_resource path="res://Scenes/LevelSegments/TransitionSegment.tscn" type="PackedScene" id=36]
+[ext_resource path="res://Scripts/BiomeAwareBackground.cs" type="Script" id=37]
+[ext_resource path="res://Images/underwaterbackground_arctic/background_1.PNG" type="Texture" id=38]
+[ext_resource path="res://Images/underwaterbackground_arctic/background_2.PNG" type="Texture" id=39]
+[ext_resource path="res://Images/underwaterbackground_arctic/background_3.PNG" type="Texture" id=40]
+[ext_resource path="res://Images/underwaterbackground_arctic/background_4.PNG" type="Texture" id=41]
+[ext_resource path="res://Scenes/LevelSegments/Arctic_PenguinAndMines.tscn" type="PackedScene" id=42]
+[ext_resource path="res://Scenes/LevelSegments/Arctic_DiversAndSeal.tscn" type="PackedScene" id=43]
+[ext_resource path="res://Scenes/LevelSegments/Cave_NetWallWithGap.tscn" type="PackedScene" id=44]
+[ext_resource path="res://Images/button_icons/sound_off.PNG" type="Texture" id=45]
+[ext_resource path="res://Images/button_icons/sound_on.PNG" type="Texture" id=46]
+[ext_resource path="res://Images/button_icons/music_off.PNG" type="Texture" id=47]
+[ext_resource path="res://Images/button_icons/music_on.PNG" type="Texture" id=48]
+[ext_resource path="res://Scenes/LevelSegments/Coral_DiverTriangleAndHealth.tscn" type="PackedScene" id=49]
+[ext_resource path="res://Scenes/LevelSegments/Coral_FishFiller.tscn" type="PackedScene" id=50]
+[ext_resource path="res://Scenes/LevelSegments/Arctic_MineTrapezoidPlusPenguin.tscn" type="PackedScene" id=51]
+[ext_resource path="res://Scenes/LevelSegments/Arctic_MineDiverSandwich.tscn" type="PackedScene" id=52]
+[ext_resource path="res://Scenes/LevelSegments/Arctic_PenguinSpearAttack.tscn" type="PackedScene" id=53]
+[ext_resource path="res://Scenes/Orcas/AbstractOrca.tscn" type="PackedScene" id=54]
+[ext_resource path="res://Scenes/LevelSegments/Coral_NetSandwich.tscn" type="PackedScene" id=55]
+[ext_resource path="res://Scenes/LevelSegments/Arctic_DiagonalDiamond.tscn" type="PackedScene" id=56]
+[ext_resource path="res://Scenes/LevelSegments/Arctic_SealTrap.tscn" type="PackedScene" id=57]
+[ext_resource path="res://Scenes/StatDisplay/StatsContainer.tscn" type="PackedScene" id=58]
+[ext_resource path="res://Scenes/StatDisplay/MissionContainer.tscn" type="PackedScene" id=59]
+[ext_resource path="res://Scenes/LevelSegments/Cave_ReversedNetWallWithGapAndPowerup.tscn" type="PackedScene" id=60]
+[ext_resource path="res://Scenes/PowerupProgressBar.tscn" type="PackedScene" id=61]
+[ext_resource path="res://Scenes/LevelSegments/Cave_SquareWithMinesAndLights.tscn" type="PackedScene" id=62]
+[ext_resource path="res://Images/button_icons/vibrate_on.PNG" type="Texture" id=63]
+[ext_resource path="res://Images/button_icons/vibrate_off.PNG" type="Texture" id=64]
+[ext_resource path="res://Scenes/LevelSegments/Cave_TwoSpearDivers.tscn" type="PackedScene" id=65]
+[ext_resource path="res://Images/underwaterbackground_deepocean/background_1.PNG" type="Texture" id=66]
+[ext_resource path="res://Images/underwaterbackground_deepocean/background_2.PNG" type="Texture" id=67]
+[ext_resource path="res://Images/underwaterbackground_deepocean/background_3.PNG" type="Texture" id=68]
+[ext_resource path="res://Images/underwaterbackground_deepocean/background_4.PNG" type="Texture" id=69]
+[ext_resource path="res://Images/underwaterbackgrounds/background_1.PNG" type="Texture" id=70]
+[ext_resource path="res://Images/underwaterbackgrounds/background_2.PNG" type="Texture" id=71]
+[ext_resource path="res://Scenes/LevelSegments/Cave_PowerupFishAndMines.tscn" type="PackedScene" id=72]
+[ext_resource path="res://Scenes/LevelSegments/Cave_SoloLightningDiver.tscn" type="PackedScene" id=73]
+[ext_resource path="res://Scenes/LevelSegments/Cave_NetWallWithoutGap.tscn" type="PackedScene" id=74]
+[ext_resource path="res://Scenes/LevelSegments/Coral_JustTwoFish.tscn" type="PackedScene" id=75]
+[ext_resource path="res://Scenes/LevelSegments/Arctic_BombNetBomb.tscn" type="PackedScene" id=76]
+[ext_resource path="res://Scenes/LevelSegments/Cave_VForSquids.tscn" type="PackedScene" id=77]
+[ext_resource path="res://Scenes/LevelSegments/Arctic_JustAPenguin.tscn" type="PackedScene" id=78]
+[ext_resource path="res://Scenes/LevelSegments/Arctic_JustASeal.tscn" type="PackedScene" id=79]
+[ext_resource path="res://Scenes/LevelSegments/Arctic_JustASpear.tscn" type="PackedScene" id=80]
+[ext_resource path="res://Scenes/LevelSegments/Arctic_SpearVolley.tscn" type="PackedScene" id=81]
+[ext_resource path="res://Scenes/LevelSegments/Cave_JustALightFish.tscn" type="PackedScene" id=82]
+[ext_resource path="res://Scenes/LevelSegments/Coral_JustAMine.tscn" type="PackedScene" id=83]
+[ext_resource path="res://Scenes/LevelSegments/Cave_MineLine.tscn" type="PackedScene" id=84]
+[ext_resource path="res://Scenes/LevelSegments/Cave_PlsUseMagnet.tscn" type="PackedScene" id=85]
+[ext_resource path="res://Scenes/LevelSegments/Coral_NetRollerCoaster.tscn" type="PackedScene" id=86]
+[ext_resource path="res://Scenes/LevelSegments/Tutorial_1.tscn" type="PackedScene" id=87]
+[ext_resource path="res://Scenes/LevelSegments/Tutorial_2.tscn" type="PackedScene" id=88]
+[ext_resource path="res://Scenes/LevelSegments/Tutorial_3.tscn" type="PackedScene" id=89]
+[ext_resource path="res://Scenes/LevelSegments/Tutorial_4.tscn" type="PackedScene" id=90]
+[ext_resource path="res://Scenes/LevelSegments/Tutorial_5.tscn" type="PackedScene" id=91]
+[ext_resource path="res://Scripts/Core/SafeAreaControl.cs" type="Script" id=92]
+
+[sub_resource type="Gradient" id=19]
+interpolation_mode = 1
+offsets = PoolRealArray( 0 )
+colors = PoolColorArray( 0.866667, 0.898039, 0.533333, 1 )
+
+[sub_resource type="GradientTexture" id=20]
+gradient = SubResource( 19 )
+
+[sub_resource type="Gradient" id=23]
+interpolation_mode = 1
+offsets = PoolRealArray( 0.0149254 )
+colors = PoolColorArray( 0.509804, 0.937255, 0.964706, 1 )
+
+[sub_resource type="GradientTexture" id=24]
+gradient = SubResource( 23 )
+
+[sub_resource type="Gradient" id=21]
+interpolation_mode = 1
+offsets = PoolRealArray( 0 )
+colors = PoolColorArray( 0.4, 0.435294, 0.439216, 1 )
+
+[sub_resource type="GradientTexture" id=22]
+gradient = SubResource( 21 )
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 135.688, 755.802 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.439216, 0.541176, 0.733333, 0.67451 )
+
+[sub_resource type="ShaderMaterial" id=3]
+shader = ExtResource( 19 )
+shader_param/blur_amount = 4.0
+
+[sub_resource type="StyleBoxEmpty" id=4]
+
+[node name="Level" type="Node2D"]
+script = ExtResource( 10 )
+__meta__ = {
+"_edit_horizontal_guides_": [ 0.0, 1440.0 ],
+"_edit_vertical_guides_": [ 0.0, 0.0 ]
+}
+PointsPerFish = 5
+PointsPerNewBiome = 20
+PointsPerPowerup = 5
+PointsPerDistance = 1
+PointsPerDestroyedObstacle = 9
+TutorialSegments = [ ExtResource( 87 ), ExtResource( 88 ), ExtResource( 89 ), ExtResource( 90 ), ExtResource( 91 ) ]
+TestLevelSegments = [ ExtResource( 53 ), ExtResource( 2 ), ExtResource( 55 ), ExtResource( 22 ) ]
+CoralLevelSegments = [ ExtResource( 15 ), ExtResource( 1 ), ExtResource( 2 ), ExtResource( 31 ), ExtResource( 32 ), ExtResource( 49 ), ExtResource( 50 ), ExtResource( 55 ), ExtResource( 75 ), ExtResource( 22 ), ExtResource( 83 ), ExtResource( 86 ) ]
+ArcticLevelSegments = [ ExtResource( 42 ), ExtResource( 43 ), ExtResource( 26 ), ExtResource( 33 ), ExtResource( 51 ), ExtResource( 52 ), ExtResource( 56 ), ExtResource( 57 ), ExtResource( 53 ), ExtResource( 76 ), ExtResource( 78 ), ExtResource( 79 ), ExtResource( 80 ), ExtResource( 81 ) ]
+CaveLevelSegments = [ ExtResource( 62 ), ExtResource( 44 ), ExtResource( 65 ), ExtResource( 72 ), ExtResource( 82 ), ExtResource( 25 ), ExtResource( 60 ), ExtResource( 74 ), ExtResource( 73 ), ExtResource( 77 ), ExtResource( 84 ), ExtResource( 85 ) ]
+BiomeTransitionSegment = ExtResource( 36 )
+BiomePaddings = PoolIntArray( 250, 350, 300, 250 )
+DistanceBetweenBiomes = 70
+SpeedIncreasePerBiome = 15.0
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="BackgroundLayer1" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.1, 0.1 )
+motion_mirroring = Vector2( 5120, 0 )
+
+[node name="Background1" type="Sprite" parent="ParallaxBackground/BackgroundLayer1"]
+texture = ExtResource( 70 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 0, 0, 5120, 1440 )
+script = ExtResource( 37 )
+BiomeTextures = [ ExtResource( 70 ), ExtResource( 70 ), ExtResource( 38 ), ExtResource( 66 ) ]
+
+[node name="BackgroundLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.2, 0.2 )
+motion_mirroring = Vector2( 5120, 0 )
+
+[node name="Background2" type="Sprite" parent="ParallaxBackground/BackgroundLayer2"]
+texture = ExtResource( 71 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 0, 0, 5120, 1440 )
+script = ExtResource( 37 )
+BiomeTextures = [ ExtResource( 71 ), ExtResource( 71 ), ExtResource( 39 ), ExtResource( 67 ) ]
+
+[node name="BackgroundLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.3, 0.3 )
+motion_mirroring = Vector2( 5120, 0 )
+
+[node name="Background3" type="Sprite" parent="ParallaxBackground/BackgroundLayer3"]
+texture = ExtResource( 5 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 0, 0, 5120, 1440 )
+script = ExtResource( 37 )
+BiomeTextures = [ ExtResource( 5 ), ExtResource( 5 ), ExtResource( 40 ), ExtResource( 68 ) ]
+
+[node name="BackgroundLayer4" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.4, 0.4 )
+motion_mirroring = Vector2( 5120, 0 )
+
+[node name="Background4" type="Sprite" parent="ParallaxBackground/BackgroundLayer4"]
+self_modulate = Color( 0.87451, 1, 0.964706, 1 )
+texture = ExtResource( 7 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 0, 0, 5120, 1440 )
+script = ExtResource( 37 )
+BiomeTextures = [ ExtResource( 7 ), ExtResource( 7 ), ExtResource( 41 ), ExtResource( 69 ) ]
+
+[node name="HeightOverflowBg" type="Sprite" parent="ParallaxBackground"]
+position = Vector2( 0, 1440 )
+texture = SubResource( 20 )
+centered = false
+offset = Vector2( 0, -2 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 5120, 2880 )
+script = ExtResource( 37 )
+BiomeTextures = [ SubResource( 20 ), SubResource( 20 ), SubResource( 24 ), SubResource( 22 ) ]
+
+[node name="AbstractOrca" parent="." instance=ExtResource( 54 )]
+position = Vector2( 390.852, 1112.51 )
+z_index = -1
+PositionFollower = NodePath("../OrcaHorizontalFollower")
+
+[node name="PlaceholderOrca" parent="AbstractOrca" instance=ExtResource( 8 )]
+HorizontalSpeed = 750.0
+FishBoostXSpeedIncrease = 200.0
+DialogueColor = Color( 0, 0, 0, 0 )
+IsPlaceholder = true
+
+[node name="Collectibles" type="Node" parent="."]
+
+[node name="Tutorial_LevelSegment" parent="Collectibles" instance=ExtResource( 30 )]
+
+[node name="OrcaHorizontalFollower" type="Node2D" parent="."]
+position = Vector2( 417.015, 3.1712 )
+script = ExtResource( 14 )
+
+[node name="LevelCamera" type="Camera2D" parent="OrcaHorizontalFollower"]
+position = Vector2( -417.015, -3.1712 )
+anchor_mode = 0
+current = true
+process_mode = 0
+limit_top = 0
+limit_bottom = 1440
+
+[node name="CollectiblesTerminator" type="Area2D" parent="OrcaHorizontalFollower"]
+position = Vector2( -2375.31, -4.1712 )
+collision_layer = 5
+collision_mask = 5
+script = ExtResource( 6 )
+
+[node name="TerminatorCollisionShape" type="CollisionShape2D" parent="OrcaHorizontalFollower/CollectiblesTerminator"]
+modulate = Color( 0.576471, 0.172549, 0.654902, 1 )
+position = Vector2( -314.311, 729.195 )
+shape = SubResource( 1 )
+
+[node name="InvisibleCeiling" parent="OrcaHorizontalFollower" instance=ExtResource( 11 )]
+visible = false
+position = Vector2( 300, 85.8896 )
+
+[node name="InvisibleFloor" parent="OrcaHorizontalFollower" instance=ExtResource( 11 )]
+visible = false
+position = Vector2( 300, 1345.25 )
+
+[node name="CollectiblesActivator" type="Area2D" parent="OrcaHorizontalFollower"]
+position = Vector2( 2182.98, 12.585 )
+collision_layer = 5
+collision_mask = 5
+script = ExtResource( 17 )
+
+[node name="ActivatorCollisionShape" type="CollisionShape2D" parent="OrcaHorizontalFollower/CollectiblesActivator"]
+modulate = Color( 0.937255, 0.45098, 1, 1 )
+position = Vector2( 141.547, 738.032 )
+shape = SubResource( 1 )
+
+[node name="BackgroundMusicPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 16 )
+volume_db = -3.4
+autoplay = true
+bus = "Music"
+
+[node name="UILayer" type="CanvasLayer" parent="."]
+layer = 100
+
+[node name="InGameUI" type="Control" parent="UILayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+script = ExtResource( 4 )
+
+[node name="PauseButton" type="TextureButton" parent="UILayer/InGameUI"]
+margin_left = 3.98193
+margin_top = 9.44946
+margin_right = 184.982
+margin_bottom = 190.449
+texture_normal = ExtResource( 27 )
+expand = true
+stretch_mode = 4
+
+[node name="ProgressBar" parent="UILayer/InGameUI" instance=ExtResource( 61 )]
+visible = false
+anchor_bottom = 0.0
+margin_left = 801.454
+margin_right = -908.546
+margin_bottom = 0.0
+rect_min_size = Vector2( 850, 74 )
+
+[node name="ScorePanel" type="PanelContainer" parent="UILayer/InGameUI"]
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 0.01
+margin_bottom = 55.0
+grow_horizontal = 0
+size_flags_horizontal = 0
+custom_styles/panel = SubResource( 2 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UILayer/InGameUI/ScorePanel"]
+margin_right = 660.0
+margin_bottom = 74.0
+
+[node name="FishScoreContainer" parent="UILayer/InGameUI/ScorePanel/HBoxContainer" instance=ExtResource( 35 )]
+margin_right = 328.0
+margin_bottom = 74.0
+HideHighScoreIndicator = true
+
+[node name="DistanceDisplayContainer" parent="UILayer/InGameUI/ScorePanel/HBoxContainer" instance=ExtResource( 34 )]
+margin_left = 332.0
+margin_right = 660.0
+margin_bottom = 74.0
+HideHighScoreIndicator = true
+
+[node name="BiomeLabel" type="Label" parent="UILayer/InGameUI"]
+visible = false
+anchor_left = 0.2
+anchor_top = 0.85
+anchor_right = 0.8
+anchor_bottom = 1.0
+margin_bottom = -10.0
+custom_fonts/font = ExtResource( 12 )
+text = "Coral Reef"
+align = 1
+valign = 2
+
+[node name="SpeedLabel" type="Label" parent="UILayer/InGameUI"]
+visible = false
+anchor_left = 0.2
+anchor_top = 0.85
+anchor_right = 0.8
+anchor_bottom = 1.0
+margin_bottom = -10.0
+custom_fonts/font = ExtResource( 12 )
+text = "Speeding Up!"
+align = 1
+valign = 2
+
+[node name="PauseLayer" type="CanvasLayer" parent="."]
+layer = 100
+
+[node name="Pause" type="Control" parent="PauseLayer"]
+pause_mode = 2
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+script = ExtResource( 24 )
+
+[node name="Control" type="ColorRect" parent="PauseLayer/Pause"]
+material = SubResource( 3 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -1.0
+margin_top = -1.0
+margin_right = 1.0
+margin_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PauseMenuBg" type="ColorRect" parent="PauseLayer/Pause/Control"]
+anchor_right = 0.3
+anchor_bottom = 1.0
+color = Color( 0.0352941, 0.133333, 0.207843, 0.956863 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PauseLayer/Pause/Control/PauseMenuBg"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 92 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HSeparator" type="HSeparator" parent="PauseLayer/Pause/Control/PauseMenuBg/VBoxContainer"]
+margin_right = 768.0
+margin_bottom = 600.0
+custom_constants/separation = 600
+custom_styles/separator = ExtResource( 20 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PauseLayer/Pause/Control/PauseMenuBg/VBoxContainer"]
+margin_top = 604.0
+margin_right = 768.0
+margin_bottom = 804.0
+rect_min_size = Vector2( 0, 200 )
+
+[node name="SoundButton" parent="PauseLayer/Pause/Control/PauseMenuBg/VBoxContainer/HBoxContainer" instance=ExtResource( 29 )]
+margin_right = 253.0
+focus_neighbour_top = NodePath("../../ResumeButton")
+focus_neighbour_bottom = NodePath("../../HomeButton")
+toggle_mode = true
+ButtonIcon = ExtResource( 45 )
+ButtonToggledOnIcon = ExtResource( 46 )
+ShowFocusIndicatorAbove = true
+
+[node name="MusicButton" parent="PauseLayer/Pause/Control/PauseMenuBg/VBoxContainer/HBoxContainer" instance=ExtResource( 29 )]
+margin_left = 257.0
+margin_right = 510.0
+focus_neighbour_top = NodePath("../../ResumeButton")
+focus_neighbour_bottom = NodePath("../../HomeButton")
+toggle_mode = true
+ButtonIcon = ExtResource( 47 )
+ButtonToggledOnIcon = ExtResource( 48 )
+ShowFocusIndicatorAbove = true
+
+[node name="VibrateButton" parent="PauseLayer/Pause/Control/PauseMenuBg/VBoxContainer/HBoxContainer" instance=ExtResource( 29 )]
+margin_left = 514.0
+margin_right = 768.0
+focus_neighbour_top = NodePath("../../ResumeButton")
+focus_neighbour_bottom = NodePath("../../HomeButton")
+toggle_mode = true
+ButtonIcon = ExtResource( 64 )
+ButtonToggledOnIcon = ExtResource( 63 )
+ShowFocusIndicatorAbove = true
+
+[node name="HomeButton" parent="PauseLayer/Pause/Control/PauseMenuBg/VBoxContainer" instance=ExtResource( 29 )]
+margin_top = 808.0
+margin_right = 768.0
+margin_bottom = 1008.0
+focus_neighbour_top = NodePath("../HBoxContainer/SoundButton")
+focus_neighbour_bottom = NodePath("../RestartButton")
+ButtonIcon = ExtResource( 23 )
+ButtonText = "Home  "
+
+[node name="RestartButton" parent="PauseLayer/Pause/Control/PauseMenuBg/VBoxContainer" instance=ExtResource( 29 )]
+margin_top = 1012.0
+margin_right = 768.0
+margin_bottom = 1212.0
+focus_neighbour_top = NodePath("../HomeButton")
+focus_neighbour_bottom = NodePath("../ResumeButton")
+shortcut = ExtResource( 9 )
+ButtonIcon = ExtResource( 28 )
+ButtonText = "Restart"
+
+[node name="ResumeButton" parent="PauseLayer/Pause/Control/PauseMenuBg/VBoxContainer" instance=ExtResource( 29 )]
+margin_top = 1216.0
+margin_right = 768.0
+margin_bottom = 1416.0
+focus_neighbour_top = NodePath("../RestartButton")
+focus_neighbour_bottom = NodePath("../HBoxContainer/SoundButton")
+ButtonIcon = ExtResource( 21 )
+ButtonText = "Resume"
+
+[node name="PauseOverlayBg" type="ColorRect" parent="PauseLayer/Pause/Control"]
+anchor_left = 0.3
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.505882, 0.776471, 0.976471, 0.309804 )
+
+[node name="PausedLabel" type="Label" parent="PauseLayer/Pause/Control/PauseOverlayBg"]
+anchor_left = 0.5
+anchor_top = 0.1
+anchor_right = 0.5
+anchor_bottom = 0.15
+margin_left = -23.0
+margin_top = -7.0
+margin_right = 23.0
+margin_bottom = 7.0
+grow_horizontal = 2
+grow_vertical = 2
+custom_fonts/font = ExtResource( 18 )
+text = "Paused"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PauseInfoPanel" type="ColorRect" parent="PauseLayer/Pause/Control/PauseOverlayBg"]
+anchor_left = 0.04
+anchor_top = 0.3
+anchor_right = 0.39
+anchor_bottom = 0.79
+margin_left = -6.10352e-05
+margin_right = -0.612183
+color = Color( 1, 1, 1, 0.105882 )
+
+[node name="StatsContainer" parent="PauseLayer/Pause/Control/PauseOverlayBg/PauseInfoPanel" instance=ExtResource( 58 )]
+pause_mode = 2
+
+[node name="Label" type="Label" parent="PauseLayer/Pause/Control/PauseOverlayBg/PauseInfoPanel"]
+margin_left = 168.53
+margin_top = -120.0
+margin_right = 556.53
+margin_bottom = -0.0510254
+custom_fonts/font = ExtResource( 3 )
+text = "Stats"
+
+[node name="PauseMissionPanel" type="ColorRect" parent="PauseLayer/Pause/Control/PauseOverlayBg"]
+anchor_left = 0.452
+anchor_top = 0.3
+anchor_right = 0.965
+anchor_bottom = 0.79
+color = Color( 1, 1, 1, 0.105882 )
+
+[node name="MissionContainer" parent="PauseLayer/Pause/Control/PauseOverlayBg/PauseMissionPanel" instance=ExtResource( 59 )]
+margin_left = 10.0
+margin_right = -10.0
+margin_bottom = -10.0
+
+[node name="Label" type="Label" parent="PauseLayer/Pause/Control/PauseOverlayBg/PauseMissionPanel"]
+margin_left = 249.074
+margin_top = -120.0
+margin_right = 637.074
+margin_bottom = -0.343567
+custom_fonts/font = ExtResource( 3 )
+text = "Missions"
+
+[node name="GameOverLayer" type="CanvasLayer" parent="."]
+layer = 110
+
+[node name="GameOver" type="Control" parent="GameOverLayer"]
+pause_mode = 2
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+script = ExtResource( 13 )
+
+[node name="Control" type="ColorRect" parent="GameOverLayer/GameOver"]
+material = SubResource( 3 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -1.0
+margin_top = -1.0
+margin_right = 1.0
+margin_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GameOverOverlayBg" type="ColorRect" parent="GameOverLayer/GameOver/Control"]
+anchor_right = 1.0
+anchor_bottom = 0.85
+color = Color( 0.439216, 0.541176, 0.733333, 0.67451 )
+
+[node name="Label" type="Label" parent="GameOverLayer/GameOver/Control/GameOverOverlayBg"]
+anchor_left = 0.5
+anchor_top = 0.141
+anchor_right = 0.5
+anchor_bottom = 0.141
+margin_left = -380.5
+margin_top = -84.5
+margin_right = 380.5
+margin_bottom = 84.5
+grow_horizontal = 2
+grow_vertical = 2
+custom_fonts/font = ExtResource( 18 )
+text = "Swim Over"
+
+[node name="GameOverInfoPanel" type="ColorRect" parent="GameOverLayer/GameOver/Control/GameOverOverlayBg"]
+anchor_left = 0.1
+anchor_top = 0.33
+anchor_right = 0.378
+anchor_bottom = 0.91
+color = Color( 1, 1, 1, 0.105882 )
+
+[node name="StatsContainer" parent="GameOverLayer/GameOver/Control/GameOverOverlayBg/GameOverInfoPanel" instance=ExtResource( 58 )]
+pause_mode = 2
+
+[node name="Label" type="Label" parent="GameOverLayer/GameOver/Control/GameOverOverlayBg/GameOverInfoPanel"]
+margin_left = 233.972
+margin_top = -130.0
+margin_right = 621.972
+margin_bottom = 2.46594
+custom_fonts/font = ExtResource( 3 )
+text = "Stats"
+
+[node name="GameOverMissionPanel" type="ColorRect" parent="GameOverLayer/GameOver/Control/GameOverOverlayBg"]
+anchor_left = 0.525
+anchor_top = 0.33
+anchor_right = 0.94
+anchor_bottom = 0.91
+color = Color( 1, 1, 1, 0.105882 )
+
+[node name="MissionContainer" parent="GameOverLayer/GameOver/Control/GameOverOverlayBg/GameOverMissionPanel" instance=ExtResource( 59 )]
+margin_left = 10.0
+margin_right = -10.0
+margin_bottom = -10.0
+
+[node name="Label" type="Label" parent="GameOverLayer/GameOver/Control/GameOverOverlayBg/GameOverMissionPanel"]
+margin_left = 343.461
+margin_top = -130.0
+margin_right = 731.461
+margin_bottom = -5.37756
+custom_fonts/font = ExtResource( 3 )
+text = "Missions"
+
+[node name="GameOverMenuBg" type="ColorRect" parent="GameOverLayer/GameOver/Control"]
+anchor_top = 0.85
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.0352941, 0.133333, 0.207843, 0.956863 )
+
+[node name="Grid" type="GridContainer" parent="GameOverLayer/GameOver/Control/GameOverMenuBg"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 40.0
+margin_bottom = 40.0
+columns = 4
+script = ExtResource( 92 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HomeButton" parent="GameOverLayer/GameOver/Control/GameOverMenuBg/Grid" instance=ExtResource( 29 )]
+margin_right = 795.0
+focus_neighbour_left = NodePath("../ReplayButton")
+focus_neighbour_right = NodePath("../ReplayButton")
+ButtonIcon = ExtResource( 23 )
+ButtonText = "Home  "
+
+[node name="VSeparator" type="VSeparator" parent="GameOverLayer/GameOver/Control/GameOverMenuBg/Grid"]
+margin_left = 799.0
+margin_right = 1599.0
+margin_bottom = 200.0
+custom_constants/separation = 800
+custom_styles/separator = SubResource( 4 )
+
+[node name="ReplayButton" parent="GameOverLayer/GameOver/Control/GameOverMenuBg/Grid" instance=ExtResource( 29 )]
+margin_left = 1603.0
+margin_right = 2398.0
+focus_neighbour_left = NodePath("../HomeButton")
+focus_neighbour_right = NodePath("../HomeButton")
+shortcut = ExtResource( 9 )
+ButtonIcon = ExtResource( 28 )
+ButtonText = "Replay"
+
+[node name="VSeparator2" type="VSeparator" parent="GameOverLayer/GameOver/Control/GameOverMenuBg/Grid"]
+margin_left = 2402.0
+margin_right = 2602.0
+margin_bottom = 200.0
+custom_constants/separation = 200
+custom_styles/separator = SubResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="GameOver" from="." to="UILayer/InGameUI" method="OnGameOver"]
+[connection signal="GameOver" from="." to="PauseLayer/Pause" method="OnGameOver"]
+[connection signal="GameOver" from="." to="GameOverLayer/GameOver" method="OnGameOver"]
+[connection signal="area_entered" from="OrcaHorizontalFollower/CollectiblesTerminator" to="OrcaHorizontalFollower/CollectiblesTerminator" method="OnAreaEnteredMe"]
+[connection signal="BiomeTransitionReached" from="OrcaHorizontalFollower/CollectiblesActivator" to="." method="OnBiomeTransitionDetected"]
+[connection signal="SegmentEndReached" from="OrcaHorizontalFollower/CollectiblesActivator" to="." method="OnLevelSegmentEndDetected"]
+[connection signal="area_entered" from="OrcaHorizontalFollower/CollectiblesActivator" to="OrcaHorizontalFollower/CollectiblesActivator" method="OnAreaEnteredMe"]
+[connection signal="button_down" from="UILayer/InGameUI/PauseButton" to="PauseLayer/Pause" method="OnPauseTriggered"]
+[connection signal="PauseTriggered" from="PauseLayer/Pause" to="UILayer/InGameUI" method="OnPause"]
+[connection signal="UnpauseTriggered" from="PauseLayer/Pause" to="UILayer/InGameUI" method="OnUnpause"]
+[connection signal="pressed" from="PauseLayer/Pause/Control/PauseMenuBg/VBoxContainer/HomeButton" to="." method="OnGameOver"]
+[connection signal="pressed" from="PauseLayer/Pause/Control/PauseMenuBg/VBoxContainer/RestartButton" to="." method="RestartLevel"]
+[connection signal="pressed" from="PauseLayer/Pause/Control/PauseMenuBg/VBoxContainer/ResumeButton" to="PauseLayer/Pause" method="OnUnpauseTriggered"]
+[connection signal="pressed" from="GameOverLayer/GameOver/Control/GameOverMenuBg/Grid/HomeButton" to="PauseLayer/Pause" method="ReturnToHome"]
+[connection signal="pressed" from="GameOverLayer/GameOver/Control/GameOverMenuBg/Grid/ReplayButton" to="." method="RestartLevel"]

@@ -1,0 +1,58 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Scenes/StatDisplay/FishDisplayContainer.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/StatDisplay/ScoreDisplayContainer.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/StatDisplay/DistanceDisplayContainer.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/StatDisplay/BiomeDisplayContainer.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/StatDisplay/PowerupDisplayContainer.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/StatDisplay/DestroyedObstacleDisplayContainer.tscn" type="PackedScene" id=6]
+
+[sub_resource type="StyleBoxLine" id=5]
+color = Color( 1, 1, 1, 1 )
+grow_begin = -50.0
+grow_end = -50.0
+thickness = 3
+
+[node name="StatsContainer" type="VBoxContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+custom_constants/separation = 20
+alignment = 1
+
+[node name="DistanceDisplayContainer" parent="." instance=ExtResource( 3 )]
+margin_top = 413.0
+margin_right = 2560.0
+margin_bottom = 487.0
+
+[node name="PowerupDisplayContainer" parent="." instance=ExtResource( 5 )]
+margin_top = 507.0
+margin_right = 2560.0
+margin_bottom = 581.0
+
+[node name="BiomeDisplayContainer" parent="." instance=ExtResource( 4 )]
+margin_top = 601.0
+margin_right = 2560.0
+margin_bottom = 675.0
+
+[node name="DestroyedObstacleDisplayContainer" parent="." instance=ExtResource( 6 )]
+margin_top = 695.0
+margin_right = 2560.0
+margin_bottom = 769.0
+
+[node name="FishScoreContainer" parent="." instance=ExtResource( 1 )]
+margin_top = 789.0
+margin_right = 2560.0
+margin_bottom = 863.0
+
+[node name="HSeparator" type="HSeparator" parent="."]
+margin_top = 883.0
+margin_right = 2560.0
+margin_bottom = 933.0
+custom_constants/separation = 50
+custom_styles/separator = SubResource( 5 )
+
+[node name="ScoreDisplayContainer" parent="." instance=ExtResource( 2 )]
+margin_top = 953.0
+margin_right = 2560.0
+margin_bottom = 1027.0

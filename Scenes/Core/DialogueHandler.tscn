@@ -1,0 +1,380 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scripts/Core/DialogueHandler.cs" type="Script" id=1]
+[ext_resource path="res://Scenes/Core/DialogueBox.tscn" type="PackedScene" id=2]
+
+[node name="DialogueHandler" type="CanvasLayer"]
+pause_mode = 2
+layer = 127
+script = ExtResource( 1 )
+DialogueBank = "[
+    {
+        \"Id\": 1,
+        \"Lines\": 
+        [
+            { Line: \"Phew! That was close.\" },
+            { Line: \"SlamWharf captured the rest of my pod.\" },
+			{ Line: \"I need to save them!\"},
+			{ Line: \"But first, I'm starving - let's catch some fish.\" },
+			{ Line: \"Dive down to the fish by holding on the screen.\" }
+        ]
+    },
+	{
+        \"Id\": 2,
+        \"Lines\": 
+        [
+            { Line: \"Darn! I missed that fish.\" },
+			{ Line: \"Hold down on the screen to dive towards the next one.\" }
+        ]
+    },
+	{
+        \"Id\": 3,
+        \"Lines\": 
+        [
+            { Line: \"Yummy!\" },
+			{ Line: \"I see another fish up above.\"},
+			{ Line: \"Release the screen and I'll swim up towards it.\" }
+        ]
+    },
+    {
+        \"Id\": 4,
+        \"Lines\": 
+        [
+            { Line: \"He got away from me!\" },
+			{ Line: \"Unpress the screen and I'll rise to catch the next fish.\" }
+        ]
+    },
+	{
+        \"Id\": 5,
+        \"Lines\": 
+        [
+            { Line: \"So delicious!\" },
+			{ Line: \"Danger ahead - dodge the upcoming mines and net.\" }
+        ]
+    },
+    {
+        \"Id\": 6,
+        \"Lines\": 
+        [
+            { Line: \"Ouch! That one hurt.\" },
+			{ Line: \"I should swim up and down to dodge these hazards.\" }
+        ]
+    },
+    {
+        \"Id\": 7,
+        \"Lines\": 
+        [
+            { Line: \"That was easy!\" },
+			{ Line: \"I see lots of fish coming up.\" },
+			{ Line: \"If I eat all 6 of them, I bet I could charge up a boost.\" },
+			{ Line: \"That magnet can help me get all the fish.\" }
+        ]
+    },
+	{
+        \"Id\": 8,
+        \"Lines\": 
+        [
+            { Line: \"Oh no! I missed some of the fish.\" },
+			{ Line: \"If I catch all 6 fish, I can boost through the nets.\" },
+			{ Line: \"Maybe that magnet can help me?\" }
+        ]
+    },
+	{
+        \"Id\": 9,
+        \"Lines\": 
+        [
+            { Line: \"Cool! Boosting lets me smash through nets and other hazards.\" },
+			{ Line: \"There's another SlamWharf ship ahead.\" },
+			{ Line: \"Maybe they've got one of the orcas in my pod!\" },
+        ]
+    },
+	{
+        \"Id\": 10,
+        \"Lines\": 
+        [
+            { Source: \"Fish\", Line: \"Thank you Sumi! But your orcas are in another biome.\" },
+			{ Source: \"Orca\", Line: \"Where did SlamWharf take them?!\" },
+			{ Source: \"Fish\", Line: \"I think they captured Finn in the Arctic.\" },
+			{ Source: \"Orca\", Line: \"Then that's where I'm heading.\" },
+			{ Source: \"Orca\", Line: \"It's time to teach this theme park a lesson -\" },
+			{ Source: \"Orca\", Line: \"Nobody messes with my family!\" }
+        ]
+    },
+	{
+	  \"Id\": 20,
+	  \"Lines\":
+	  [
+	    { \"Line\": \"All done here for now!\" },
+		{ \"Line\": \"We can pause and go *home* to get new missions.\" }
+      ]
+	},
+    {
+	  \"Id\": 21,
+	  \"Lines\":
+	  [
+	    { \"Line\": \"Want new challenges?\" },
+		{ \"Line\": \"Pause the game and press Home to see new missions.\" }
+      ]
+	},
+	{
+        \"AssociatedOrca\": 1,
+        \"Lines\":
+        [
+            { \"Line\": \"I'll make SlamWharf wish they'd never picked on our pod!\"}
+        ]
+    },
+	{
+        \"AssociatedOrca\": 1,
+        \"Lines\":
+        [
+            { \"Line\": \"The early whale gets the fish.\"}
+        ]
+    },
+	{
+        \"AssociatedOrca\": 1,
+        \"Lines\":
+        [
+            { \"Line\": \"Let me guess - I'm the pod's only hope again?\"}
+        ]
+    },
+	{
+        \"AssociatedOrca\": 1,
+        \"Lines\":
+        [
+            { \"Line\": \"Rules were made to be broken.\"},
+			{ \"Line\": \"Fishing nets were, too!\"},
+        ]
+    },
+	{
+        \"AssociatedOrca\": 1,
+        \"Lines\":
+        [
+            { \"Line\": \"Eat. Breach. Dive. Repeat.\"}
+        ]
+    },
+	{
+        \"AssociatedOrca\": 1,
+        \"Lines\":
+        [
+            { \"Line\": \"Don't mess with an orca who cleans her teeth with seal fangs.\"}
+        ]
+    },
+	{
+        \"AssociatedOrca\": 1,
+        \"Lines\":
+        [
+            { \"Line\": \"A strong orca looks danger in the eye and gives it a wink.\"}
+        ]
+    },
+	{
+        \"AssociatedOrca\": 1,
+        \"Lines\":
+        [
+            { \"Line\": \"I'm not a whale, I'm a legend.\"}
+        ]
+    },
+		{
+        \"AssociatedOrca\": 1,
+        \"Lines\":
+        [
+            { \"Line\": \"Know your ABCs:\"},
+			{ \"Line\": \"Always Be Catchin'.\"}
+        ]
+    },
+	{
+        \"AssociatedOrca\": 1,
+        \"Lines\":
+        [
+            { \"Line\": \"Fast is just another word for me.\"}
+        ]
+    },
+    {
+        \"AssociatedOrca\": 2,
+        \"Lines\":
+        [
+            { \"Line\": \"I don't like math, but counting fishies is fun!\"}
+        ]
+    },
+	{
+        \"AssociatedOrca\": 2,
+        \"Lines\":
+        [
+            { \"Line\": \"I am in shape - round is a shape.\"}
+        ]
+    },
+	{
+        \"AssociatedOrca\": 2,
+        \"Lines\":
+        [
+            { \"Line\": \"Work harder, not smarter.\"}
+        ]
+    },
+	{
+        \"AssociatedOrca\": 2,
+        \"Lines\":
+        [
+            { \"Line\": \"This doesn't seem right.\"},
+			{ \"Line\": \"Maybe we should go left?\"}
+        ]
+    },
+	{
+        \"AssociatedOrca\": 2,
+        \"Lines\":
+        [
+            { \"Line\": \"I'm on a \\\"see food\\\" diet.\"}
+        ]
+    },
+	{
+        \"AssociatedOrca\": 2,
+        \"Lines\":
+        [
+            { \"Line\": \"This water is wet.\"}
+        ]
+    },
+	{
+        \"AssociatedOrca\": 2,
+        \"Lines\":
+        [
+            { \"Line\": \"I don't know directions to SlamWharf...\"},
+			{ \"Line\": \"...but I know how to get there!\"}
+        ]
+    },
+	{
+        \"AssociatedOrca\": 2,
+        \"Lines\":
+        [
+            { \"Line\": \"We have to eat more fish to save them from drowning.\"}
+        ]
+    },
+	{
+        \"AssociatedOrca\": 2,
+        \"Lines\":
+        [
+            { \"Line\": \"The mines sparkle if you hit them...\"},
+			{ \"Line\": \"...but you probably shouldn't.\"}
+        ]
+    },
+    {
+        \"AssociatedOrca\": 3,
+        \"Lines\":
+        [
+            { \"Line\": \"Whaddya call a pod of musical whales!?\"},
+            { \"Line\": \"An Orca-stra!\"}
+        ]
+    },
+    {
+        \"AssociatedOrca\": 3,
+        \"Lines\":
+        [
+            { \"Line\": \"Whale whale, what have we got here!?\"}
+        ]
+    },
+    {
+        \"AssociatedOrca\": 3,
+        \"Lines\":
+        [
+            { \"Line\": \"I hope these Orca puns aren't killing you!\"}
+        ]
+    },
+    {
+        \"AssociatedOrca\": 3,
+        \"Lines\":
+        [
+            { \"Line\": \"XX is my name! Teasing is my game!\"}
+        ]
+    },
+    {
+        \"AssociatedOrca\": 3,
+        \"Lines\":
+        [
+            { \"Line\": \"If you're tired of my puns, just tail me to stop!\"}
+        ]
+    },
+	{
+        \"AssociatedOrca\": 3,
+        \"Lines\":
+        [
+            { \"Line\": \"I'm not small, I'm fun sized!!\"}
+        ]
+    },
+    {
+        \"AssociatedOrca\": 3,
+        \"Lines\":
+        [
+            { \"Line\": \"All these obstacles are over-Whale-ming!\"}
+        ]
+    },
+    {
+        \"AssociatedOrca\": 3,
+        \"Lines\":
+        [
+            { \"Line\": \"Why don't they call pandas land orcas?!\"}
+        ]
+    },
+    {
+        \"AssociatedOrca\": 4,
+        \"Lines\":
+        [
+            { \"Line\": \"Hi Sweetie! I'm XX.\"},
+            { \"Line\": \"Thanks for rounding up my precious pod.\"}
+        ]
+    },
+    {
+        \"AssociatedOrca\": 4,
+        \"Lines\":
+        [
+            { \"Line\": \"These young SlamWharf divers have no respect for their elders!\"}
+        ]
+    },
+    {
+        \"AssociatedOrca\": 4,
+        \"Lines\":
+        [
+            { \"Line\": \"I like my fish with a dash of sugar.\"}
+        ]
+    },
+    {
+        \"AssociatedOrca\": 4,
+        \"Lines\":
+        [
+            { \"Line\": \"Bless your heart for rescuing my angels.\"}
+        ]
+    },
+    {
+        \"AssociatedOrca\": 4,
+        \"Lines\":
+        [
+            { \"Line\": \"Well, as I live and breathe.\"}
+        ]
+    },
+	{
+        \"AssociatedOrca\": 4,
+        \"Lines\":
+        [
+            { \"Line\": \"A tsunami  is coming. I feel it in my bones.\"}
+        ]
+    },
+	{
+        \"AssociatedOrca\": 4,
+        \"Lines\":
+        [
+            { \"Line\": \"A crack in the ice'll make the seals think twice.\"}
+        ]
+    },
+    {
+        \"AssociatedOrca\": 4,
+        \"Lines\":
+        [
+            { \"Line\": \"I'm just happy to see my little babies freed.\"}
+        ]
+    },
+    {
+        \"AssociatedOrca\": 4,
+        \"Lines\":
+        [
+            { \"Line\": \"I'm the grandmother of pearl.\"},
+		    { \"Line\": \"The sea is my oyster.\"}
+        ]
+    }
+]"
+DialoguePopupScene = ExtResource( 2 )

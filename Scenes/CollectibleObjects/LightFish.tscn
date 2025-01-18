@@ -1,0 +1,50 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Scenes/CollectibleObjects/Base/CollectiblePrize.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Images/lightfish/lightfish_a_down.png" type="Texture" id=2]
+[ext_resource path="res://Images/lightfish/lightfish_b_up.png" type="Texture" id=3]
+[ext_resource path="res://Images/lightfish/lightfish_a_up.png" type="Texture" id=4]
+[ext_resource path="res://Images/lightfish/lightfish_b_down.png" type="Texture" id=5]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 36.5876
+height = 29.7208
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "a",
+"speed": 4.5
+}, {
+"frames": [ ExtResource( 5 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "b",
+"speed": 4.5
+} ]
+
+[node name="LightFish" instance=ExtResource( 1 )]
+OnCollectedStatType = 25
+Velocity = 125.0
+
+[node name="BackgroundAura" parent="." index="0"]
+position = Vector2( -0.890132, -5.4797 )
+scale = Vector2( 10.607, 7.66728 )
+
+[node name="CollectibleObjectSprite" parent="." index="1"]
+visible = false
+
+[node name="CollectibleObjectCollision" parent="." index="2"]
+position = Vector2( 5.28534, -0.258848 )
+shape = SubResource( 1 )
+
+[node name="CollectibleObjectAnimation" parent="." index="5"]
+visible = true
+scale = Vector2( 0.9, 0.9 )
+frames = SubResource( 2 )
+animation = "b"
+frame = 1
+playing = true
+
+[node name="OnCollectedParticles" parent="." index="7"]
+position = Vector2( 55.4366, -0.839935 )

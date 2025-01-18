@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scenes/LevelSegments/BaseLevelSegment.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/CollectibleObjects/Fish3.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/CollectibleObjects/Net.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/CollectibleObjects/Powerups/AbstractPowerup.tscn" type="PackedScene" id=4]
+
+[node name="Coral_FishBetweenNets" instance=ExtResource( 1 )]
+position = Vector2( -2.99658, 1.99774 )
+
+[node name="SegmentEnd" parent="." index="0"]
+position = Vector2( 1780, 0 )
+
+[node name="Net4" parent="." index="1" instance=ExtResource( 3 )]
+position = Vector2( 1016.24, 170.285 )
+rotation = 3.90605
+
+[node name="Net5" parent="." index="2" instance=ExtResource( 3 )]
+position = Vector2( 1046.49, 1255.67 )
+rotation = -1.18857
+
+[node name="Fish9" parent="." index="3" instance=ExtResource( 2 )]
+position = Vector2( 1506.03, 536.46 )
+
+[node name="AbstractPowerup" parent="." index="4" instance=ExtResource( 4 )]
+position = Vector2( 666.065, 252.341 )

@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scenes/CollectibleObjects/Base/CollectiblePowerup.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Images/powerups/double_fish_powerup.PNG" type="Texture" id=3]
+
+[node name="DoubleFishPowerup" instance=ExtResource( 2 )]
+Type = 1
+Duration = 5.0
+ModulateColor = Color( 0.866667, 0.729412, 0.176471, 1 )
+PowerupIcon = ExtResource( 3 )
+
+[node name="CollectibleObjectSprite" parent="." index="1"]
+position = Vector2( -1.25073, -10.7379 )
+texture = ExtResource( 3 )

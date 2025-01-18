@@ -1,0 +1,126 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://Images/underwater_laboratory/ship.PNG" type="Texture" id=1]
+[ext_resource path="res://Scenes/LevelSegments/BaseLevelSegment.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Images/underwater_laboratory/net.PNG" type="Texture" id=3]
+[ext_resource path="res://Scripts/ProximityDetectors/ProximityDetector.cs" type="Script" id=4]
+[ext_resource path="res://Scripts/TransitionSegment.cs" type="Script" id=5]
+[ext_resource path="res://Images/gameplay_icons/heart_icon.PNG" type="Texture" id=6]
+[ext_resource path="res://Sounds/orca_freed.ogg" type="AudioStream" id=9]
+[ext_resource path="res://Scenes/Orcas/AbstractOrca.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/Orcas/CoralOrca.tscn" type="PackedScene" id=11]
+
+[sub_resource type="Gradient" id=4]
+offsets = PoolRealArray( 0, 0.984, 1 )
+colors = PoolColorArray( 1, 0.0980392, 0.25098, 1, 1, 0.818444, 0.90908, 0.421757, 1, 1, 0.85098, 0.25098 )
+
+[sub_resource type="GradientTexture" id=3]
+gradient = SubResource( 4 )
+
+[sub_resource type="ParticlesMaterial" id=5]
+lifetime_randomness = 0.19
+emission_shape = 1
+emission_sphere_radius = 26.76
+flag_disable_z = true
+direction = Vector3( 0, 0, 0 )
+spread = 180.0
+gravity = Vector3( 200, 0, 0 )
+initial_velocity = 60.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+linear_accel = 18.18
+radial_accel = 500.0
+radial_accel_random = 0.21
+tangential_accel = 11.68
+tangential_accel_random = 0.22
+damping = 3.97
+scale = 0.5
+color = Color( 1, 0.0980392, 0.25098, 1 )
+color_ramp = SubResource( 3 )
+
+[sub_resource type="CapsuleShape2D" id=7]
+radius = 168.294
+height = 1411.99
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 494.825, 719.308 )
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 125.874, 766.181 )
+
+[node name="TransitionSegment" groups=["transition_segment"] instance=ExtResource( 2 )]
+script = ExtResource( 5 )
+
+[node name="UnderwaterLaboratory" type="Sprite" parent="." index="0"]
+position = Vector2( -377.481, -808.871 )
+scale = Vector2( 1.06827, 1.06827 )
+z_index = -4
+texture = ExtResource( 1 )
+centered = false
+
+[node name="SegmentEnd" parent="." index="1"]
+position = Vector2( 5444.58, 0 )
+
+[node name="AbstractOrca" parent="." index="2" instance=ExtResource( 10 )]
+position = Vector2( 4304.34, 1203.53 )
+IsNpc = true
+DelaySpawn = true
+
+[node name="PlaceholderOrca" parent="AbstractOrca" index="0" instance=ExtResource( 11 )]
+scale = Vector2( -1, 1 )
+HorizontalSpeed = 750.0
+FishBoostXSpeedIncrease = 200.0
+IsPlaceholder = true
+
+[node name="OnOrcaReleaseParticles" type="Particles2D" parent="." index="3"]
+position = Vector2( 4000.55, 1160.8 )
+emitting = false
+amount = 3
+lifetime = 1.3
+one_shot = true
+speed_scale = 2.0
+explosiveness = 0.4
+randomness = 0.02
+process_material = SubResource( 5 )
+texture = ExtResource( 6 )
+
+[node name="OrcaNet" type="Sprite" parent="." index="4"]
+position = Vector2( 0, -808.871 )
+texture = ExtResource( 3 )
+centered = false
+
+[node name="NetReleaseCollision" type="Area2D" parent="." index="5"]
+position = Vector2( 2843.55, 0 )
+
+[node name="NetReleaseCollisionShape" type="CollisionShape2D" parent="NetReleaseCollision" index="0"]
+position = Vector2( 850.071, 676.517 )
+rotation = -0.39619
+shape = SubResource( 7 )
+
+[node name="NetReleaseProximityCollision" type="Area2D" parent="." index="6" groups=["proximity_detector"]]
+position = Vector2( 2843.55, 0 )
+collision_layer = 2
+collision_mask = 2
+script = ExtResource( 4 )
+
+[node name="NetReleaseProximityCollisionShape" type="CollisionShape2D" parent="NetReleaseProximityCollision" index="0"]
+position = Vector2( 263.15, 724.689 )
+shape = SubResource( 2 )
+
+[node name="BiomeTransition" type="Area2D" parent="." index="7" groups=["biome_transition_marker", "level_segment_end"]]
+position = Vector2( 3577.26, -26.9391 )
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BiomeTransition" index="0"]
+modulate = Color( 1, 0.666667, 0, 1 )
+position = Vector2( -20.1587, 727.089 )
+shape = SubResource( 6 )
+
+[node name="OnFreedAudio" type="AudioStreamPlayer" parent="." index="8"]
+stream = ExtResource( 9 )
+bus = "Sound"
+
+[connection signal="body_entered" from="NetReleaseCollision" to="." method="OnBodyEnteredMe"]
+[connection signal="area_entered" from="NetReleaseProximityCollision" to="NetReleaseProximityCollision" method="OnAreaEnteredMe"]
+[connection signal="area_exited" from="NetReleaseProximityCollision" to="NetReleaseProximityCollision" method="OnAreaExitedMe"]

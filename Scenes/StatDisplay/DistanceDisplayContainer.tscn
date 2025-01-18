@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scenes/StatDisplay/StatDisplayContainer.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Images/gameplay_icons/location_icon.PNG" type="Texture" id=2]
+
+[node name="DistanceDisplayContainer" instance=ExtResource( 1 )]
+hint_tooltip = "Distance"
+MessagePostfix = "m"
+StatToDisplay = 2
+
+[node name="TextureRect" parent="MarginContainer" index="1"]
+texture = ExtResource( 2 )
+stretch_mode = 6

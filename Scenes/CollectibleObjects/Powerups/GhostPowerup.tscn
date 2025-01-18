@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Images/powerups/ghost_powerup.PNG" type="Texture" id=1]
+[ext_resource path="res://Scenes/CollectibleObjects/Base/CollectiblePowerup.tscn" type="PackedScene" id=2]
+
+[node name="GhostPowerup" instance=ExtResource( 2 )]
+Type = 6
+Duration = 7.0
+ModulateColor = Color( 0.552941, 0.913725, 0.45098, 1 )
+PowerupIcon = ExtResource( 1 )
+PowerupScale = 0.9
+
+[node name="CollectibleObjectSprite" parent="." index="1"]
+position = Vector2( -0.251859, 3.74574 )
+texture = ExtResource( 1 )

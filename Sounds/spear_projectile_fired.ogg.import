@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/spear_projectile_fired.ogg-6ff572da96c89ac15bf81e94bd68d414.oggstr"
+
+[deps]
+
+source_file="res://Sounds/spear_projectile_fired.ogg"
+dest_files=[ "res://.import/spear_projectile_fired.ogg-6ff572da96c89ac15bf81e94bd68d414.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/orca_freed.ogg-e345843e9f00791690b100f7d8f3d430.oggstr"
+
+[deps]
+
+source_file="res://Sounds/orca_freed.ogg"
+dest_files=[ "res://.import/orca_freed.ogg-e345843e9f00791690b100f7d8f3d430.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

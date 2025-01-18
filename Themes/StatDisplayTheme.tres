@@ -1,0 +1,23 @@
+[gd_resource type="Theme" load_steps=4 format=2]
+
+[sub_resource type="DynamicFontData" id=2]
+font_path = "res://Fonts/Ubuntu-Regular.ttf"
+
+[sub_resource type="DynamicFont" id=3]
+size = 28
+use_mipmaps = true
+use_filter = true
+font_data = SubResource( 2 )
+
+[sub_resource type="StyleBoxFlat" id=1]
+content_margin_left = 6.0
+content_margin_right = 6.0
+content_margin_top = 6.0
+content_margin_bottom = 6.0
+bg_color = Color( 0.298039, 0.643137, 0.807843, 1 )
+border_color = Color( 0.207843, 0.207843, 0.207843, 1 )
+
+[resource]
+TooltipLabel/colors/font_color = Color( 1, 1, 1, 1 )
+TooltipLabel/fonts/font = SubResource( 3 )
+TooltipPanel/styles/panel = SubResource( 1 )

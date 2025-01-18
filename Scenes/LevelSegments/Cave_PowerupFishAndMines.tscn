@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scenes/LevelSegments/BaseLevelSegment.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/CollectibleObjects/Powerups/AbstractPowerup.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/CollectibleObjects/Mine.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/CollectibleObjects/Squid.tscn" type="PackedScene" id=5]
+
+[node name="Cave_PowerupFishAndMines" instance=ExtResource( 2 )]
+
+[node name="SegmentEnd" parent="." index="0"]
+position = Vector2( 1133.83, 0 )
+
+[node name="Mine" parent="." index="1" instance=ExtResource( 4 )]
+position = Vector2( 441.053, 617.09 )
+
+[node name="AbstractPowerup" parent="." index="2" instance=ExtResource( 3 )]
+position = Vector2( 288.317, 1280.83 )
+
+[node name="Mine2" parent="." index="3" instance=ExtResource( 4 )]
+position = Vector2( 718.238, 1026.27 )
+
+[node name="Squid" parent="." index="4" instance=ExtResource( 5 )]
+position = Vector2( 1619.56, 405.9 )
+
+[node name="Mine3" parent="." index="5" instance=ExtResource( 4 )]
+position = Vector2( 976.567, 892.389 )

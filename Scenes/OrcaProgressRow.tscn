@@ -1,0 +1,171 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scenes/ProgressRow.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Fonts/Ubuntu50.tres" type="DynamicFont" id=2]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 1, 1, 1, 1 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.3538, 0.43297, 0.58, 1 )
+
+[node name="OrcaProgressRow" instance=ExtResource( 1 )]
+rect_min_size = Vector2( 0, 550 )
+
+[node name="IconControl" parent="." index="0"]
+anchor_bottom = 0.75
+
+[node name="VBoxContainer" parent="." index="1"]
+anchor_bottom = 0.75
+
+[node name="Title" parent="VBoxContainer" index="0"]
+margin_top = 50.0
+margin_bottom = 147.0
+
+[node name="Description" parent="VBoxContainer" index="1"]
+margin_top = 201.0
+margin_bottom = 318.0
+
+[node name="MarginContainer" parent="VBoxContainer" index="2"]
+margin_top = 402.0
+margin_bottom = 412.0
+
+[node name="StatsHbox" type="HBoxContainer" parent="." index="3"]
+anchor_top = 0.75
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 30.0
+margin_right = -30.0
+margin_bottom = -30.0
+custom_constants/separation = 15
+
+[node name="Speed" type="Control" parent="StatsHbox" index="0"]
+margin_right = 607.0
+margin_bottom = 107.0
+mouse_filter = 1
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="StatsHbox/Speed" index="0"]
+anchor_right = 1.0
+anchor_bottom = 0.5
+mouse_filter = 1
+custom_fonts/font = ExtResource( 2 )
+text = "Speed"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="ProgressBar" type="ProgressBar" parent="StatsHbox/Speed" index="1"]
+anchor_top = 0.54
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_right = -10.0
+mouse_filter = 1
+custom_styles/fg = SubResource( 1 )
+custom_styles/bg = SubResource( 2 )
+percent_visible = false
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Power" type="Control" parent="StatsHbox" index="1"]
+margin_left = 622.0
+margin_right = 1230.0
+margin_bottom = 107.0
+mouse_filter = 1
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="StatsHbox/Power" index="0"]
+anchor_right = 1.0
+anchor_bottom = 0.5
+mouse_filter = 1
+custom_fonts/font = ExtResource( 2 )
+text = "Power"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="ProgressBar" type="ProgressBar" parent="StatsHbox/Power" index="1"]
+anchor_top = 0.54
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_right = -10.0
+mouse_filter = 1
+custom_styles/fg = SubResource( 1 )
+custom_styles/bg = SubResource( 2 )
+percent_visible = false
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Agility" type="Control" parent="StatsHbox" index="2"]
+margin_left = 1245.0
+margin_right = 1852.0
+margin_bottom = 107.0
+mouse_filter = 1
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="StatsHbox/Agility" index="0"]
+anchor_right = 1.0
+anchor_bottom = 0.5
+mouse_filter = 1
+custom_fonts/font = ExtResource( 2 )
+text = "Agility"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="ProgressBar" type="ProgressBar" parent="StatsHbox/Agility" index="1"]
+anchor_top = 0.54
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_right = -10.0
+mouse_filter = 1
+custom_styles/fg = SubResource( 1 )
+custom_styles/bg = SubResource( 2 )
+percent_visible = false
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Size" type="Control" parent="StatsHbox" index="3"]
+margin_left = 1867.0
+margin_right = 2475.0
+margin_bottom = 107.0
+mouse_filter = 1
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="StatsHbox/Size" index="0"]
+anchor_right = 1.0
+anchor_bottom = 0.5
+mouse_filter = 1
+custom_fonts/font = ExtResource( 2 )
+text = "Size"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="ProgressBar" type="ProgressBar" parent="StatsHbox/Size" index="1"]
+anchor_top = 0.54
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_right = -10.0
+mouse_filter = 1
+custom_styles/fg = SubResource( 1 )
+custom_styles/bg = SubResource( 2 )
+percent_visible = false
+__meta__ = {
+"_edit_use_anchors_": true
+}
