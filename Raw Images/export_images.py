@@ -4,7 +4,7 @@ from psd_tools import PSDImage
 import os
 import glob
 
-kritaExePath = "C:\\Program Files\\Krita (x64)\\bin\\krita.exe"
+kritaExePath = "D:\\ProgramFiles\\Krita\\Krita (x64)\\bin\\krita.exe"
 filesExcludedFromExport = ["david_ugly_mockups.kra", "menu_icon.kra", "obsticles.kra", "diver.kra", "sea_panda_header", "sea_panda_logo.kra", "whale_tail_app_icon", "sea_panda_logo_eyesopen", "sea_panda_logo_whitecircle", "sea_panda_logo_wideeyes"]
 filesThatExportToSinglePng = ["powerup_circle", "speed_boost", "whale_tail"]
 filesThatExportToSinglePngAndLayers = ["underwaterbackground_deepocean", "underwaterbackground_arctic", "underwaterbackgrounds"]
