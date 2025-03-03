@@ -14,7 +14,7 @@ filesThatShouldntResizeLayers = ["gameplay_icons"] #TODO hook this up, fill this
 kritaFiles = glob.glob('./**/*.kra', recursive=True)
 kritaFiles = list(filter(lambda f: all(ef not in f for ef in filesExcludedFromExport), kritaFiles))
 kritaFiles = list(filter(lambda f: "kra-autosave" not in f, kritaFiles))
-kritaFiles = list(filter(lambda f: "hats" in f, kritaFiles))
+# kritaFiles = list(filter(lambda f: "hats" in f, kritaFiles))
 print("The following files will be exported to PNGs:")
 print(kritaFiles)
 print()
