@@ -6,24 +6,24 @@ namespace Orcinus.Scripts.Models
     {
         [Description("None")]
         None = 0,
-        [Description("Bow")]
-        Bow = 1,
-        [Description("Chef")]
-        Chef = 2,
-        [Description("Cowhand")]
-        Cowhand = 3,
-        [Description("Crown")]
-        Crown = 4,
-        [Description("Jester")]
-        Jester = 5,
-        [Description("Magician")]
-        Magician = 6,
-        [Description("Party")]
-        Party = 7,
-        [Description("Santa")]
-        Santa = 8,
-        [Description("Top")]
-        Top = 9,
+        [Description("Kelp")]
+        Kelp = 1,
+        [Description("Seaweed")]
+        Seaweed = 2,
+        [Description("Conch")]
+        Conch = 3,
+        [Description("Clam")]
+        Clam = 4,
+        [Description("Starfish")]
+        Starfish = 5,
+        [Description("Jellyfish")]
+        Jellyfish = 6,
+        [Description("Seashells")]
+        Seashells = 7,
+        [Description("Coral")]
+        Coral = 8,
+        [Description("Salmon")]
+        Salmon = 9,
         Default = 9999,
     }
 }

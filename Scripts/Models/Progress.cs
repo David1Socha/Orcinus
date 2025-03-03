@@ -91,15 +91,15 @@ namespace Orcinus.Scripts.Models
             new Unlockable<PowerupEnum>(7, PowerupEnum.TripleFish),
 
             new Unlockable<HatEnum>(1, HatEnum.None),
-            new Unlockable<HatEnum>(1, HatEnum.Top),
-            new Unlockable<HatEnum>(2, HatEnum.Chef),
-            new Unlockable<HatEnum>(3, HatEnum.Cowhand),
-            new Unlockable<HatEnum>(4, HatEnum.Magician),
-            new Unlockable<HatEnum>(5, HatEnum.Bow),
-            new Unlockable<HatEnum>(6, HatEnum.Party),
-            new Unlockable<HatEnum>(7, HatEnum.Santa),
-            new Unlockable<HatEnum>(8, HatEnum.Jester),
-            new Unlockable<HatEnum>(8, HatEnum.Crown),
+            new Unlockable<HatEnum>(1, HatEnum.Salmon),
+            new Unlockable<HatEnum>(2, HatEnum.Seaweed),
+            new Unlockable<HatEnum>(3, HatEnum.Conch),
+            new Unlockable<HatEnum>(4, HatEnum.Jellyfish),
+            new Unlockable<HatEnum>(5, HatEnum.Kelp),
+            new Unlockable<HatEnum>(6, HatEnum.Seashells),
+            new Unlockable<HatEnum>(7, HatEnum.Coral),
+            new Unlockable<HatEnum>(8, HatEnum.Starfish),
+            new Unlockable<HatEnum>(8, HatEnum.Clam),
         };
 
         [JsonIgnore]

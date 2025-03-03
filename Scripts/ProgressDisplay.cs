@@ -1,5 +1,4 @@
-﻿using System;
-using Godot;
+﻿using Godot;
 using Orcinus.Scripts.Core;
 using static Orcinus.Scripts.Models.Constants;
 
@@ -20,45 +19,58 @@ namespace Orcinus.Scripts
             _firstOrcaRow = GetNode<ProgressRow>("TabContainer/Orcas/OrcasVbox/Sumi");
             _firstBiomeRow = GetNode<ProgressRow>("TabContainer/Biomes/Biomes/Coral");
             _firstPowerupRow = GetNode<ProgressRow>("TabContainer/Powerups/Powerups/HealthPack");
-            _firstHatRow = GetNode<ProgressRow>("TabContainer/Hats/Hats/None");
+            _firstHatRow = GetNode<ProgressRow>("TabContainer/Fashion/Fashion/None");
             _orcaScroll = GetNode<ScrollContainer>("TabContainer/Orcas");
             _biomeScroll = GetNode<ScrollContainer>("TabContainer/Biomes");
-            _hatScroll = GetNode<ScrollContainer>("TabContainer/Hats");
+            _hatScroll = GetNode<ScrollContainer>("TabContainer/Fashion");
             _powerupScroll = GetNode<ScrollContainer>("TabContainer/Powerups");
 
             GlobalSignalBus.RegisterHandler(Signals.ProgressRowGainedFocus, this, nameof(OnProgressRowFocused));
-            
+
             base._Ready();
         }
 
-        public void OnProgressRowFocused(ProgressRow focusedRow) {
+        public void OnProgressRowFocused(ProgressRow focusedRow)
+        {
             var currentScrollContainer = GetActiveScrollContainer();
             GD.Print(currentScrollContainer.Name);
-            if (currentScrollContainer != null) {
+            if (currentScrollContainer != null)
+            {
                 var focusOffset = (int)focusedRow.RectPosition.y;
                 GD.Print("FO: " + focusOffset);
                 var scrollStart = currentScrollContainer.RectPosition.y + currentScrollContainer.ScrollVertical;
                 GD.Print("SS: " + scrollStart);
                 var scrollBottom = scrollStart + currentScrollContainer.RectSize.y - focusedRow.RectSize.y;
                 GD.Print("SB: " + scrollBottom);
-                if (focusOffset < scrollStart || focusOffset >= scrollBottom) {
+                if (focusOffset < scrollStart || focusOffset >= scrollBottom)
+                {
                     GD.Print("adjusting scrollvertical to offset");
                     currentScrollContainer.ScrollVertical = focusOffset;
                 }
             }
-            
+
         }
 
-        public ScrollContainer GetActiveScrollContainer() {
-            if (_tabContainer.CurrentTab == 0) {
+        public ScrollContainer GetActiveScrollContainer()
+        {
+            if (_tabContainer.CurrentTab == 0)
+            {
                 return _orcaScroll;
-            } else if (_tabContainer.CurrentTab == 1) {
+            }
+            else if (_tabContainer.CurrentTab == 1)
+            {
                 return _biomeScroll;
-            } else if (_tabContainer.CurrentTab == 2) {
+            }
+            else if (_tabContainer.CurrentTab == 2)
+            {
                 return _powerupScroll;
-            } else if (_tabContainer.CurrentTab == 4) {
+            }
+            else if (_tabContainer.CurrentTab == 4)
+            {
                 return _hatScroll;
-            } else {
+            }
+            else
+            {
                 return null;
             }
         }
@@ -71,41 +83,55 @@ namespace Orcinus.Scripts
 
         public override void _Input(InputEvent @event)
         {
-            if (Visible) {
-                if (@event.IsActionPressed("ui_cancel")) {
+            if (Visible)
+            {
+                if (@event.IsActionPressed("ui_cancel"))
+                {
                     OnCloseButtonPressed();
-                } else if (@event.IsActionPressed("ui_left")) {
+                }
+                else if (@event.IsActionPressed("ui_left"))
+                {
                     PageTabsLeft();
-                } else if (@event.IsActionPressed("ui_right")) {
+                }
+                else if (@event.IsActionPressed("ui_right"))
+                {
                     PageTabsRight();
                 }
             }
-            
+
             base._Input(@event);
         }
 
-        public void PageTabsLeft() {
-            if (_tabContainer.CurrentTab != 0) {
+        public void PageTabsLeft()
+        {
+            if (_tabContainer.CurrentTab != 0)
+            {
                 _tabContainer.CurrentTab--;
             }
-            else {
+            else
+            {
                 _tabContainer.CurrentTab = _tabContainer.GetTabCount() - 1;
             }
             FocusOnFirstRowInCurrentTab();
         }
 
-        public void PageTabsRight() {
-            if (_tabContainer.CurrentTab != _tabContainer.GetTabCount() - 1) {
+        public void PageTabsRight()
+        {
+            if (_tabContainer.CurrentTab != _tabContainer.GetTabCount() - 1)
+            {
                 _tabContainer.CurrentTab++;
             }
-            else {
+            else
+            {
                 _tabContainer.CurrentTab = 0;
             }
             FocusOnFirstRowInCurrentTab();
         }
 
-        public void FocusOnFirstRowInCurrentTab() {
-            switch (_tabContainer.CurrentTab) {
+        public void FocusOnFirstRowInCurrentTab()
+        {
+            switch (_tabContainer.CurrentTab)
+            {
                 case 0: // orca tab
                     _firstOrcaRow.GrabFocusForRow();
                     break;
@@ -124,8 +150,10 @@ namespace Orcinus.Scripts
             }
         }
 
-        public void OnVisibilityChanged() {
-            if (Visible) {
+        public void OnVisibilityChanged()
+        {
+            if (Visible)
+            {
                 FocusOnFirstRowInCurrentTab();
             }
         }

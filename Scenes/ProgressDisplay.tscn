@@ -20,16 +20,16 @@
 [ext_resource path="res://Scripts/ProgressDisplay.cs" type="Script" id=18]
 [ext_resource path="res://Scenes/OrcaProgressRow.tscn" type="PackedScene" id=19]
 [ext_resource path="res://Scenes/StatDisplay/MissionContainer.tscn" type="PackedScene" id=20]
-[ext_resource path="res://Images/hats/top_hat.png" type="Texture" id=21]
+[ext_resource path="res://Images/hats/fish.png" type="Texture" id=21]
 [ext_resource path="res://Images/whale_tail.png" type="Texture" id=22]
-[ext_resource path="res://Images/hats/chef_hat.png" type="Texture" id=23]
-[ext_resource path="res://Images/hats/cowgirl_hat.png" type="Texture" id=24]
-[ext_resource path="res://Images/hats/mage_hat.png" type="Texture" id=25]
-[ext_resource path="res://Images/hats/bow_hat.png" type="Texture" id=26]
-[ext_resource path="res://Images/hats/party_hat.png" type="Texture" id=27]
-[ext_resource path="res://Images/hats/santa_hat.png" type="Texture" id=28]
-[ext_resource path="res://Images/hats/jester_hat.png" type="Texture" id=29]
-[ext_resource path="res://Images/hats/crown_hat.png" type="Texture" id=30]
+[ext_resource path="res://Images/hats/seaweed.png" type="Texture" id=23]
+[ext_resource path="res://Images/hats/conch.png" type="Texture" id=24]
+[ext_resource path="res://Images/hats/jellyfish.png" type="Texture" id=25]
+[ext_resource path="res://Images/hats/kelp.png" type="Texture" id=26]
+[ext_resource path="res://Images/hats/seashells.png" type="Texture" id=27]
+[ext_resource path="res://Images/hats/coral.png" type="Texture" id=28]
+[ext_resource path="res://Images/hats/starfish.png" type="Texture" id=29]
+[ext_resource path="res://Images/hats/clam.png" type="Texture" id=30]
 
 [sub_resource type="StyleBoxFlat" id=1]
 content_margin_top = 20.0
@@ -276,7 +276,7 @@ margin_bottom = 869.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Hats" type="ScrollContainer" parent="TabContainer"]
+[node name="Fashion" type="ScrollContainer" parent="TabContainer"]
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -284,7 +284,7 @@ margin_top = 107.0
 custom_styles/bg = SubResource( 1 )
 scroll_horizontal_enabled = false
 
-[node name="Hats" type="VBoxContainer" parent="TabContainer/Hats"]
+[node name="Fashion" type="VBoxContainer" parent="TabContainer/Fashion"]
 margin_top = 20.0
 margin_right = 2381.4
 margin_bottom = 3200.0
@@ -292,7 +292,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/separation = 20
 
-[node name="None" parent="TabContainer/Hats/Hats" instance=ExtResource( 4 )]
+[node name="None" parent="TabContainer/Fashion/Fashion" instance=ExtResource( 4 )]
 Icon = ExtResource( 22 )
 Title = "None"
 Description = "No accessories needed, you're naturally stylish!"
@@ -300,84 +300,84 @@ Biome = 1
 Hat = 0
 IconAnchorPadding = 0.28
 
-[node name="Top" parent="TabContainer/Hats/Hats" instance=ExtResource( 4 )]
+[node name="Salmon" parent="TabContainer/Fashion/Fashion" instance=ExtResource( 4 )]
 margin_top = 320.0
 margin_bottom = 620.0
 Icon = ExtResource( 21 )
-Title = "Top Hat"
-Description = "A dapper looking top hat."
+Title = "Salmon"
+Description = "The latest trend in high fashion for orcas."
 Hat = 9
 IconAnchorPadding = 0.15
 
-[node name="Chef" parent="TabContainer/Hats/Hats" instance=ExtResource( 4 )]
+[node name="Seaweed" parent="TabContainer/Fashion/Fashion" instance=ExtResource( 4 )]
 margin_top = 320.0
 margin_bottom = 620.0
 Icon = ExtResource( 23 )
-Title = "Chef Hat"
-Description = "For cooking up a storm... or some sushi."
+Title = "Seaweed"
+Description = "Killer waves, dude!"
 Hat = 2
 IconAnchorPadding = 0.15
 
-[node name="Cowhand" parent="TabContainer/Hats/Hats" instance=ExtResource( 4 )]
+[node name="Conch" parent="TabContainer/Fashion/Fashion" instance=ExtResource( 4 )]
 margin_top = 320.0
 margin_bottom = 620.0
 Icon = ExtResource( 24 )
-Title = "Cowhand Hat"
-Description = "Howdy Partner!"
+Title = "Conch Shell"
+Description = "You can hear the ocean,  if you're swimming with a conch shell."
 Hat = 3
 IconAnchorPadding = 0.15
 
-[node name="Magician" parent="TabContainer/Hats/Hats" instance=ExtResource( 4 )]
+[node name="Jellyfish" parent="TabContainer/Fashion/Fashion" instance=ExtResource( 4 )]
 margin_top = 320.0
 margin_bottom = 620.0
 Icon = ExtResource( 25 )
-Title = "Magician Hat"
-Description = "Make those fish disappear."
+Title = "Jellyfish"
+Description = "Keep an eye on those tentacles!"
 Hat = 6
 IconAnchorPadding = 0.15
 
-[node name="Bow" parent="TabContainer/Hats/Hats" instance=ExtResource( 4 )]
+[node name="Kelp" parent="TabContainer/Fashion/Fashion" instance=ExtResource( 4 )]
 margin_top = 320.0
 margin_bottom = 620.0
 Icon = ExtResource( 26 )
-Title = "Bow"
-Description = "It's debatable whether a bow really counts as a hat... but it's definitely fun!"
+Title = "Kelp"
+Description = "Some nice-looking strands of kelp."
 Hat = 1
 IconAnchorPadding = 0.15
 
-[node name="Party" parent="TabContainer/Hats/Hats" instance=ExtResource( 4 )]
+[node name="Seashells" parent="TabContainer/Fashion/Fashion" instance=ExtResource( 4 )]
 margin_top = 320.0
 margin_bottom = 620.0
 Icon = ExtResource( 27 )
-Title = "Party Hat"
-Description = "Feeling festive!!"
+Title = "Seashells"
+Description = "Ooh, shiny!"
 Hat = 7
 IconAnchorPadding = 0.15
 
-[node name="Santa" parent="TabContainer/Hats/Hats" instance=ExtResource( 4 )]
+[node name="Coral" parent="TabContainer/Fashion/Fashion" instance=ExtResource( 4 )]
 margin_top = 320.0
 margin_bottom = 620.0
 Icon = ExtResource( 28 )
-Title = "Santa Hat"
-Description = "All orcas are on the nice list."
+Title = "Coral"
+Description = "For those who rule the reef."
 Hat = 8
 IconAnchorPadding = 0.15
 
-[node name="Jester" parent="TabContainer/Hats/Hats" instance=ExtResource( 4 )]
+[node name="Starfish" parent="TabContainer/Fashion/Fashion" instance=ExtResource( 4 )]
 margin_top = 320.0
 margin_bottom = 620.0
 Icon = ExtResource( 29 )
-Title = "Jester Hat"
-Description = "The joke is on SlamWharf - orcas are born to be wild!"
+Title = "Starfish"
+Description = "You're the real star!"
 Hat = 5
 IconAnchorPadding = 0.15
 
-[node name="Crown" parent="TabContainer/Hats/Hats" instance=ExtResource( 4 )]
+[node name="Clam" parent="TabContainer/Fashion/Fashion" instance=ExtResource( 4 )]
 margin_top = 320.0
 margin_bottom = 620.0
 Icon = ExtResource( 30 )
-Title = "Crown"
-Description = "For those with leadership skills."
+Title = "Clam"
+Description = "Almost as precious as an orca! Almost."
 Hat = 4
 IconAnchorPadding = 0.15
 

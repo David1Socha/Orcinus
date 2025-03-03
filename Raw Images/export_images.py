@@ -5,7 +5,7 @@ import os
 import glob
 
 kritaExePath = "D:\\ProgramFiles\\Krita\\Krita (x64)\\bin\\krita.exe"
-filesExcludedFromExport = ["david_ugly_mockups.kra", "menu_icon.kra", "obsticles.kra", "diver.kra", "sea_panda_header", "sea_panda_logo.kra", "whale_tail_app_icon", "sea_panda_logo_eyesopen", "sea_panda_logo_whitecircle", "sea_panda_logo_wideeyes"]
+filesExcludedFromExport = ["david_ugly_mockups.kra", "hats_new.kra", "menu_icon.kra", "obsticles.kra", "diver.kra", "sea_panda_header", "sea_panda_logo.kra", "whale_tail_app_icon", "sea_panda_logo_eyesopen", "sea_panda_logo_whitecircle", "sea_panda_logo_wideeyes"]
 filesThatExportToSinglePng = ["powerup_circle", "speed_boost", "whale_tail"]
 filesThatExportToSinglePngAndLayers = ["underwaterbackground_deepocean", "underwaterbackground_arctic", "underwaterbackgrounds"]
 filesThatShouldntResizeLayers = ["gameplay_icons"] #TODO hook this up, fill this in
@@ -14,7 +14,7 @@ filesThatShouldntResizeLayers = ["gameplay_icons"] #TODO hook this up, fill this
 kritaFiles = glob.glob('./**/*.kra', recursive=True)
 kritaFiles = list(filter(lambda f: all(ef not in f for ef in filesExcludedFromExport), kritaFiles))
 kritaFiles = list(filter(lambda f: "kra-autosave" not in f, kritaFiles))
-# kritaFiles = list(filter(lambda f: "yacht" in f, kritaFiles))
+kritaFiles = list(filter(lambda f: "hats" in f, kritaFiles))
 print("The following files will be exported to PNGs:")
 print(kritaFiles)
 print()
