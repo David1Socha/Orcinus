@@ -79,7 +79,7 @@ namespace Orcinus.Scripts.Core
 
         public static bool IsReleasedWithinControl(this InputEvent @event, Control ctrl)
         {
-            return (@event.IsReleased() && ctrl.GetGlobalRect().HasPoint(ctrl.GetViewport().GetMousePosition()));
+            return (@event.IsReleased() && (@event is InputEventScreenTouch) && ctrl.GetGlobalRect().HasPoint(ctrl.GetViewport().GetMousePosition()));
         }
 
         public static bool IsReleased(this InputEvent @event)

@@ -277,7 +277,6 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Fashion" type="ScrollContainer" parent="TabContainer"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = 107.0
@@ -286,59 +285,65 @@ scroll_horizontal_enabled = false
 
 [node name="Fashion" type="VBoxContainer" parent="TabContainer/Fashion"]
 margin_top = 20.0
-margin_right = 2381.4
+margin_right = 2301.4
 margin_bottom = 3200.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/separation = 20
 
 [node name="None" parent="TabContainer/Fashion/Fashion" instance=ExtResource( 4 )]
+margin_right = 2301.0
 Icon = ExtResource( 22 )
 Title = "None"
 Description = "No accessories needed, you're naturally stylish!"
 Biome = 1
 Hat = 0
-IconAnchorPadding = 0.28
+IconAnchorPadding = 0.31
 
 [node name="Salmon" parent="TabContainer/Fashion/Fashion" instance=ExtResource( 4 )]
 margin_top = 320.0
+margin_right = 2301.0
 margin_bottom = 620.0
 Icon = ExtResource( 21 )
 Title = "Salmon"
-Description = "The latest trend in high fashion for orcas."
+Description = "The latest trend in high fashion."
 Hat = 9
-IconAnchorPadding = 0.15
+IconAnchorPadding = 0.2
 
 [node name="Seaweed" parent="TabContainer/Fashion/Fashion" instance=ExtResource( 4 )]
-margin_top = 320.0
-margin_bottom = 620.0
+margin_top = 640.0
+margin_right = 2301.0
+margin_bottom = 940.0
 Icon = ExtResource( 23 )
 Title = "Seaweed"
 Description = "Killer waves, dude!"
 Hat = 2
-IconAnchorPadding = 0.15
+IconAnchorPadding = 0.24
 
 [node name="Conch" parent="TabContainer/Fashion/Fashion" instance=ExtResource( 4 )]
-margin_top = 320.0
-margin_bottom = 620.0
+margin_top = 960.0
+margin_right = 2301.0
+margin_bottom = 1260.0
 Icon = ExtResource( 24 )
 Title = "Conch Shell"
-Description = "You can hear the ocean,  if you're swimming with a conch shell."
+Description = "You can hear the ocean, if you're swimming with a conch shell."
 Hat = 3
 IconAnchorPadding = 0.15
 
 [node name="Jellyfish" parent="TabContainer/Fashion/Fashion" instance=ExtResource( 4 )]
-margin_top = 320.0
-margin_bottom = 620.0
+margin_top = 1280.0
+margin_right = 2301.0
+margin_bottom = 1580.0
 Icon = ExtResource( 25 )
 Title = "Jellyfish"
 Description = "Keep an eye on those tentacles!"
 Hat = 6
-IconAnchorPadding = 0.15
+IconAnchorPadding = 0.18
 
 [node name="Kelp" parent="TabContainer/Fashion/Fashion" instance=ExtResource( 4 )]
-margin_top = 320.0
-margin_bottom = 620.0
+margin_top = 1600.0
+margin_right = 2301.0
+margin_bottom = 1900.0
 Icon = ExtResource( 26 )
 Title = "Kelp"
 Description = "Some nice-looking strands of kelp."
@@ -346,8 +351,9 @@ Hat = 1
 IconAnchorPadding = 0.15
 
 [node name="Seashells" parent="TabContainer/Fashion/Fashion" instance=ExtResource( 4 )]
-margin_top = 320.0
-margin_bottom = 620.0
+margin_top = 1920.0
+margin_right = 2301.0
+margin_bottom = 2220.0
 Icon = ExtResource( 27 )
 Title = "Seashells"
 Description = "Ooh, shiny!"
@@ -355,17 +361,19 @@ Hat = 7
 IconAnchorPadding = 0.15
 
 [node name="Coral" parent="TabContainer/Fashion/Fashion" instance=ExtResource( 4 )]
-margin_top = 320.0
-margin_bottom = 620.0
+margin_top = 2240.0
+margin_right = 2301.0
+margin_bottom = 2540.0
 Icon = ExtResource( 28 )
 Title = "Coral"
 Description = "For those who rule the reef."
 Hat = 8
-IconAnchorPadding = 0.15
+IconAnchorPadding = 0.22
 
 [node name="Starfish" parent="TabContainer/Fashion/Fashion" instance=ExtResource( 4 )]
-margin_top = 320.0
-margin_bottom = 620.0
+margin_top = 2560.0
+margin_right = 2301.0
+margin_bottom = 2860.0
 Icon = ExtResource( 29 )
 Title = "Starfish"
 Description = "You're the real star!"
@@ -373,13 +381,14 @@ Hat = 5
 IconAnchorPadding = 0.15
 
 [node name="Clam" parent="TabContainer/Fashion/Fashion" instance=ExtResource( 4 )]
-margin_top = 320.0
-margin_bottom = 620.0
+margin_top = 2880.0
+margin_right = 2301.0
+margin_bottom = 3180.0
 Icon = ExtResource( 30 )
 Title = "Clam"
 Description = "Almost as precious as an orca! Almost."
 Hat = 4
-IconAnchorPadding = 0.15
+IconAnchorPadding = 0.12
 
 [node name="CloseButton" type="TextureButton" parent="."]
 anchor_left = 0.93
