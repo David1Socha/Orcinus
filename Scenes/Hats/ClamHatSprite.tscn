@@ -4,6 +4,7 @@
 [ext_resource path="res://Images/hats/clam.png" type="Texture" id=2]
 
 [node name="ClamHatSprite" instance=ExtResource( 1 )]
-position = Vector2( -1, -27 )
+position = Vector2( 0, -25 )
+rotation = 0.0523599
 scale = Vector2( 0.6, 0.6 )
 texture = ExtResource( 2 )

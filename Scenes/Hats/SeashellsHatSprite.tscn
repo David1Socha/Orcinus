@@ -4,5 +4,6 @@
 [ext_resource path="res://Images/hats/seashells.png" type="Texture" id=2]
 
 [node name="SeashellsHatSprite" instance=ExtResource( 1 )]
-position = Vector2( -2, -8 )
+position = Vector2( -2, -3 )
+rotation = 0.29147
 texture = ExtResource( 2 )

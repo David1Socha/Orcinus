@@ -277,6 +277,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Fashion" type="ScrollContainer" parent="TabContainer"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = 107.0
@@ -285,7 +286,7 @@ scroll_horizontal_enabled = false
 
 [node name="Fashion" type="VBoxContainer" parent="TabContainer/Fashion"]
 margin_top = 20.0
-margin_right = 2301.4
+margin_right = 2381.4
 margin_bottom = 3200.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -326,7 +327,7 @@ margin_right = 2301.0
 margin_bottom = 1260.0
 Icon = ExtResource( 24 )
 Title = "Conch Shell"
-Description = "You can hear the ocean, if you're swimming with a conch shell."
+Description = "You can hear the ocean - if you're swimming with a conch shell."
 Hat = 3
 IconAnchorPadding = 0.15
 

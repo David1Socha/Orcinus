@@ -4,5 +4,6 @@
 [ext_resource path="res://Images/hats/starfish.png" type="Texture" id=2]
 
 [node name="StarfishHatSprite" instance=ExtResource( 1 )]
-position = Vector2( -4, -10 )
+position = Vector2( -4, 8 )
+rotation = 0.0349066
 texture = ExtResource( 2 )

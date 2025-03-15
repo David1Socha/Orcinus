@@ -4,5 +4,5 @@
 [ext_resource path="res://Images/hats/conch.png" type="Texture" id=2]
 
 [node name="ConchHatSprite" instance=ExtResource( 1 )]
-position = Vector2( -8, -12 )
+position = Vector2( -7, -18 )
 texture = ExtResource( 2 )

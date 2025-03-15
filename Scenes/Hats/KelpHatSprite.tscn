@@ -4,5 +4,5 @@
 [ext_resource path="res://Images/hats/kelp.png" type="Texture" id=2]
 
 [node name="KelpHatSprite" instance=ExtResource( 1 )]
-position = Vector2( -3, 4 )
+position = Vector2( -3, 12 )
 texture = ExtResource( 2 )
