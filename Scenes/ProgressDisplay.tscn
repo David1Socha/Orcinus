@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://Themes/OrcinusTheme.tres" type="Theme" id=1]
 [ext_resource path="res://Images/orcas/finn/finn.png" type="Texture" id=2]
@@ -30,6 +30,7 @@
 [ext_resource path="res://Images/hats/coral.png" type="Texture" id=28]
 [ext_resource path="res://Images/hats/starfish.png" type="Texture" id=29]
 [ext_resource path="res://Images/hats/clam.png" type="Texture" id=30]
+[ext_resource path="res://Images/hats/rocks.png" type="Texture" id=31]
 
 [sub_resource type="StyleBoxFlat" id=1]
 content_margin_top = 20.0
@@ -287,7 +288,7 @@ scroll_horizontal_enabled = false
 [node name="Fashion" type="VBoxContainer" parent="TabContainer/Fashion"]
 margin_top = 20.0
 margin_right = 2381.4
-margin_bottom = 3200.0
+margin_bottom = 3520.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/separation = 20
@@ -310,6 +311,16 @@ Title = "Salmon"
 Description = "The latest trend in high fashion."
 Hat = 9
 IconAnchorPadding = 0.2
+
+[node name="Pebbles" parent="TabContainer/Fashion/Fashion" instance=ExtResource( 4 )]
+margin_top = 640.0
+margin_right = 2301.0
+margin_bottom = 940.0
+Icon = ExtResource( 31 )
+Title = "Pebbles"
+Description = "Perfect for a soothing massage."
+Hat = 10
+IconAnchorPadding = 0.24
 
 [node name="Seaweed" parent="TabContainer/Fashion/Fashion" instance=ExtResource( 4 )]
 margin_top = 640.0

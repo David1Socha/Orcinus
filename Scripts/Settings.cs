@@ -12,7 +12,7 @@ namespace Orcinus.Scripts
 
         private EnhancedConfigFile _config;
 
-        private bool _musicEnabled, _soundEnabled, _vibrateEnabled, _tutorialEnabled;
+        private bool _musicEnabled, _soundEnabled, _vibrateEnabled, _tutorialEnabled, _fullscreenEnabled;
         private OrcaEnum _activeOrca;
         private HatEnum _activeHat;
         private BiomeEnum _startingBiome;
@@ -63,6 +63,7 @@ namespace Orcinus.Scripts
 
             AudioServer.SetBusMute(AudioBuses.MusicBus, !_musicEnabled);
             AudioServer.SetBusMute(AudioBuses.SoundBus, !_soundEnabled);
+            OS.WindowFullscreen = _fullscreenEnabled;
 
             base._Ready();
         }
@@ -75,6 +76,7 @@ namespace Orcinus.Scripts
             _soundEnabled = _config.GetValue<bool>(Config.SettingsSection, Config.SoundSetting, true);
             _vibrateEnabled = _config.GetValue<bool>(Config.SettingsSection, Config.VibrateSetting, true);
             _tutorialEnabled = _config.GetValue<bool>(Config.SettingsSection, Config.TutorialSetting, true);
+            _fullscreenEnabled = _config.GetValue<bool>(Config.SettingsSection, Config.FullscreenSetting, true);
 
             _activeOrca = _config.GetValue<OrcaEnum>(Config.UnlocksSection, Config.ActiveOrcaSetting, OrcaEnum.CoralOrca);
             _activeHat = _config.GetValue<HatEnum>(Config.UnlocksSection, Config.ActiveHatSetting, HatEnum.None);
@@ -85,8 +87,9 @@ namespace Orcinus.Scripts
         public static bool SoundEnabled { get { return Instance._soundEnabled; } }
         public static bool VibrateEnabled { get { return Instance._vibrateEnabled; } }
         public static bool TutorialEnabled { get { return Instance._tutorialEnabled; } }
+        public static bool FullscreenEnabled { get { return Instance._fullscreenEnabled; } }
 
-        // using explicit methods instead of setters, so these plays well with Godot signal linking
+        // using explicit methods instead of setter properties so these can play well with Godot signal linking
 
         public void SetMusicEnabled(bool isMusicEnabled)
         {

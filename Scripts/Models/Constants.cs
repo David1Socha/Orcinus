@@ -85,6 +85,7 @@
             public const string MusicSetting = "Music";
             public const string SoundSetting = "Sound";
             public const string VibrateSetting = "Vibrate";
+            public const string FullscreenSetting = "Fullscreen";
 
             public const string TutorialSetting = "Tutorial";
 

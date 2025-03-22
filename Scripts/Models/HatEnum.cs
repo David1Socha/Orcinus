@@ -24,6 +24,8 @@ namespace Orcinus.Scripts.Models
         Coral = 8,
         [Description("Salmon")]
         Salmon = 9,
+        [Description("Pebbles")]
+        Pebbles = 10,
         Default = 9999,
     }
 }

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Scripts/Hat.cs" type="Script" id=1]
 [ext_resource path="res://Scenes/Hats/SeaweedHatSprite.tscn" type="PackedScene" id=2]
@@ -10,7 +10,8 @@
 [ext_resource path="res://Scenes/Hats/SalmonHatSprite.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/Hats/ClamHatSprite.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Scenes/Hats/JellyfishHatSprite.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/Hats/PebblesHatSprite.tscn" type="PackedScene" id=11]
 
 [node name="Hat" type="Node2D"]
 script = ExtResource( 1 )
-Hats = [ null, ExtResource( 5 ), ExtResource( 2 ), ExtResource( 6 ), ExtResource( 9 ), ExtResource( 7 ), ExtResource( 10 ), ExtResource( 4 ), ExtResource( 3 ), ExtResource( 8 ) ]
+Hats = [ null, ExtResource( 5 ), ExtResource( 2 ), ExtResource( 6 ), ExtResource( 9 ), ExtResource( 7 ), ExtResource( 10 ), ExtResource( 4 ), ExtResource( 3 ), ExtResource( 8 ), ExtResource( 11 ) ]

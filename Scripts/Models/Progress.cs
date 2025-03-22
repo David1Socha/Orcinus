@@ -91,6 +91,7 @@ namespace Orcinus.Scripts.Models
             new Unlockable<PowerupEnum>(7, PowerupEnum.TripleFish),
 
             new Unlockable<HatEnum>(1, HatEnum.None),
+            new Unlockable<HatEnum>(1, HatEnum.Pebbles),
             new Unlockable<HatEnum>(1, HatEnum.Salmon),
             new Unlockable<HatEnum>(2, HatEnum.Seaweed),
             new Unlockable<HatEnum>(3, HatEnum.Conch),
