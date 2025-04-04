@@ -76,7 +76,7 @@ namespace Orcinus.Scripts
             _soundEnabled = _config.GetValue<bool>(Config.SettingsSection, Config.SoundSetting, true);
             _vibrateEnabled = _config.GetValue<bool>(Config.SettingsSection, Config.VibrateSetting, true);
             _tutorialEnabled = _config.GetValue<bool>(Config.SettingsSection, Config.TutorialSetting, true);
-            _fullscreenEnabled = _config.GetValue<bool>(Config.SettingsSection, Config.FullscreenSetting, true);
+            _fullscreenEnabled = _config.GetValue<bool>(Config.SettingsSection, Config.FullscreenSetting, false);
 
             _activeOrca = _config.GetValue<OrcaEnum>(Config.UnlocksSection, Config.ActiveOrcaSetting, OrcaEnum.CoralOrca);
             _activeHat = _config.GetValue<HatEnum>(Config.UnlocksSection, Config.ActiveHatSetting, HatEnum.None);

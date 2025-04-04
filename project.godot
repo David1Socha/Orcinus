@@ -32,7 +32,6 @@ DialogueHandler="*res://Scenes/Core/DialogueHandler.tscn"
 
 window/size/width=2560
 window/size/height=1440
-window/size/fullscreen=true
 window/size/test_width=1920
 window/size/test_height=1080
 window/dpi/allow_hidpi=true
